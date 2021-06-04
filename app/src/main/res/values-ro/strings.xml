@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources><string name="app_name">Red Moon</string>
+<resources><string name="app_name">Fulldive Eye Filter</string>
 
-    <string name="activity_main">Red Moon</string>
-    <string name="activity_shortcut">Comutator Red Moon</string>
+    <string name="activity_main">Fulldive Eye Filter</string>
+    <string name="activity_shortcut">Comutator Fulldive Eye Filter</string>
     <string name="activity_intro">Introducere</string>
-    <string name="activity_about">Despre Red Moon</string>
+    <string name="activity_about">Despre Fulldive Eye Filter</string>
     <string name="activity_secure_suspend">Suspendă în aplicații excluse</string>
     <string name="activity_schedule">Orar</string>
     <string name="activity_timer">Temporizator</string>
@@ -50,11 +50,11 @@
     <string name="pref_title_use_location">Răsărit la apus</string>
     <string name="pref_summary_use_location">Pe baza locației</string>
 
-    <string name="pref_summary_secure_suspend">Când setarea este activată, Red Moon se va suspenda când anumite aplicații sunt deschise. Ca opțiune standard, aceasta include aplicațiile care nu vor funcționa cât timp Red Moon este activat*, cum ar fi, instalarea apk-urilor. Puteți schimba această opțiune pentru ecranul curent al aplicației curente din notificare. Spre exemplu, ați putea dori să adăugați aplicații în care culorile sunt importante, cum ar fi Camera. 
+    <string name="pref_summary_secure_suspend">Când setarea este activată, Fulldive Eye Filter se va suspenda când anumite aplicații sunt deschise. Ca opțiune standard, aceasta include aplicațiile care nu vor funcționa cât timp Fulldive Eye Filter este activat*, cum ar fi, instalarea apk-urilor. Puteți schimba această opțiune pentru ecranul curent al aplicației curente din notificare. Spre exemplu, ați putea dori să adăugați aplicații în care culorile sunt importante, cum ar fi Camera.
 \n 
 \nAceastă funcționalitate ar putea să reducă ușor durata de viață a bateriei dispozitivului.
 \n 
-\nUnele aplicații sunt securizate împotriva aplicațiilor care afișează deasupra lor, pentru a se proteja de interferențe, cum ar fi să fiți păcăliți să instalați o aplicație nedorită. Acestea nu vor răspunde la atingere atât timp cât Red Moon este activat, acesta funcționând prin afișarea unui filtru transparent deasupra ecranului.</string>
+\nUnele aplicații sunt securizate împotriva aplicațiilor care afișează deasupra lor, pentru a se proteja de interferențe, cum ar fi să fiți păcăliți să instalați o aplicație nedorită. Acestea nu vor răspunde la atingere atât timp cât Fulldive Eye Filter este activat, acesta funcționând prin afișarea unui filtru transparent deasupra ecranului.</string>
 
     <string name="button_add_filter">Adaugă</string>
     <string name="button_remove_filter">Șterge</string>
@@ -77,49 +77,49 @@
     <string name="pref_summary_translators">Traducător: alpha80147</string>
 
     <string name="pref_title_integration">Integrare cu alte aplicații</string>
-    <string name="pref_summary_integration">Unele aplicații, cum ar fi LibreTasks sau Tasker, vă permit să automatizați acțiuni când se product anumite evenimente. Red Moon transmite notificare publică când se activează sau dezactivează, astfel că acele aplicații pot răspunde cu o acțiune. Dacă nu folosiți sau nu dezvoltați astfel de aplicații, puteți ignora următorul paragraf.
+    <string name="pref_summary_integration">Unele aplicații, cum ar fi LibreTasks sau Tasker, vă permit să automatizați acțiuni când se product anumite evenimente. Fulldive Eye Filter transmite notificare publică când se activează sau dezactivează, astfel că acele aplicații pot răspunde cu o acțiune. Dacă nu folosiți sau nu dezvoltați astfel de aplicații, puteți ignora următorul paragraf.
 \n
-\nRed moon transmite o intenție publică cu acțiunea `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Aceste intenții conțin un boolean adițional cu cheia `jmstudios.bundle.key.FILTER_IS_ON`, ceea ce indică dacă Red Moon se activează sau dezactivează.</string>
+\nFulldive Eye Filter transmite o intenție publică cu acțiunea `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Aceste intenții conțin un boolean adițional cu cheia `jmstudios.bundle.key.FILTER_IS_ON`, ceea ce indică dacă Fulldive Eye Filter se activează sau dezactivează.</string>
 
-    <string name="toast_warning_install">Nu veți putea instala APK-uri cât timp Red Moon este activat.</string>
-    <string name="toast_warning_secured">Unele funcționalități ale acestei aplicații ar putea să nu funcționeze cât timp Red Moon este activat.</string>
+    <string name="toast_warning_install">Nu veți putea instala APK-uri cât timp Fulldive Eye Filter este activat.</string>
+    <string name="toast_warning_secured">Unele funcționalități ale acestei aplicații ar putea să nu funcționeze cât timp Fulldive Eye Filter este activat.</string>
 
     <string name="snackbar_warning_no_location">Activează serviciile de locație pentru actualizarea locației</string>
     <string name="snackbar_searching_location">Se caută locația</string>
     <string name="snackbar_location_updated">Locație găsită!</string>
-    <string name="help_snackbar_text">Apasă pe comutator pentru a activa Red Moon</string>
+    <string name="help_snackbar_text">Apasă pe comutator pentru a activa Fulldive Eye Filter</string>
 
     <string name="dialog_title_add_filter">Denumește filtrul</string>
     <string name="edit_hint_add_filter">Nume filtru</string>
     <string name="dialog_title_remove_filter">Șterge filtrul?</string>
 
     <string name="dialog_title_permission_overlay">Afișare peste alte aplicații</string>
-    <string name="dialog_message_permission_overlay">Autorizează afișarea peste alte aplicații în următorul ecran pentru a permite activarea Red Moon.</string>
+    <string name="dialog_message_permission_overlay">Autorizează afișarea peste alte aplicații în următorul ecran pentru a permite activarea Fulldive Eye Filter.</string>
 
     <string name="dialog_title_permission_write_settings">Se modifică setările de sistem</string>
-    <string name="dialog_message_permission_write_settings">Autorizează modificarea setărilor de sistem în următorul ecran pentru a permite Red Moon să schimbe intensitatea luminozității.</string>
+    <string name="dialog_message_permission_write_settings">Autorizează modificarea setărilor de sistem în următorul ecran pentru a permite Fulldive Eye Filter să schimbe intensitatea luminozității.</string>
 
     <string name="dialog_title_permission_usage_stats">Drepturi de utlizare</string>
-    <string name="dialog_message_permission_usage_stats">Autorizează drepturile de utilizare în următorul ecran pentru a permite Red Moon să se suspende în aplicații securizate.
+    <string name="dialog_message_permission_usage_stats">Autorizează drepturile de utilizare în următorul ecran pentru a permite Fulldive Eye Filter să se suspende în aplicații securizate.
 \n
-\nRed Moon va utiliza aceste date numai pentru a determina dacă utilizați o aplicație care nu va funcționa când Red Moon este activ.</string>
+\nFulldive Eye Filter va utiliza aceste date numai pentru a determina dacă utilizați o aplicație care nu va funcționa când Fulldive Eye Filter este activ.</string>
 
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Anulare</string>
 
-    <string name="shortcut_title_toggle">Comutare Red Moon</string>
+    <string name="shortcut_title_toggle">Comutare Fulldive Eye Filter</string>
 
     <string name="slide_title_welcome">Bine ați venit!</string>
-    <string name="slide_text_welcome">Bine ați venit la Red Moon!</string>
+    <string name="slide_text_welcome">Bine ați venit la Fulldive Eye Filter!</string>
 
     <string name="slide_title_protect_eyes">Protejați-vă ochii</string>
-    <string name="slide_text_protect_eyes">Noaptea, când vă dor ochii privind ecranul telefonului, puteți utiliza Red Moon pentru a întuneca ecranul.</string>
+    <string name="slide_text_protect_eyes">Noaptea, când vă dor ochii privind ecranul telefonului, puteți utiliza Fulldive Eye Filter pentru a întuneca ecranul.</string>
 
     <string name="slide_title_improve_sleep">Îmbunătățiți-vă somnul</string>
-    <string name="slide_text_improve_sleep">Lumina albastră suprimă producția de Melatonină, un hormon ce vă ajută să adormiți noaptea. Red Moon elimină lumina albastră de pe ecranul dumneavoastră, asigurându-vă că puteți adormi cu ușurință.</string>
+    <string name="slide_text_improve_sleep">Lumina albastră suprimă producția de Melatonină, un hormon ce vă ajută să adormiți noaptea. Fulldive Eye Filter elimină lumina albastră de pe ecranul dumneavoastră, asigurându-vă că puteți adormi cu ușurință.</string>
 
     <string name="slide_title_get_started">Porniți!</string>
-    <string name="slide_text_get_started">Activați și dezactivați Red Moon cu comutatorul din colțul dreapta sus.</string>
+    <string name="slide_text_get_started">Activați și dezactivați Fulldive Eye Filter cu comutatorul din colțul dreapta sus.</string>
 
     <string name="filter_name_custom">Personalizat</string>
     <string name="filter_name_default">Standard</string>

@@ -48,7 +48,7 @@ class Notification(
             if (belowAPI(24)) { setContentTitle(getString(R.string.app_name)) }
             setSubText(activeProfile.name)
 
-            // Open Red Moon when tapping notification body
+            // Open Fulldive Eye Filter when tapping notification body
             val mainIntent = intent(MainActivity::class).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             }

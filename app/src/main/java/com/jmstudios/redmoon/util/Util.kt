@@ -25,26 +25,26 @@
 package com.jmstudios.redmoon.util
 
 import android.content.Intent
-import androidx.preference.Preference
+import android.net.Uri
 import androidx.core.content.ContextCompat
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-
 import com.jmstudios.redmoon.RedMoonApplication
-import com.jmstudios.redmoon.model.Profile
+import com.jmstudios.redmoon.appextensions.AppExtensionState
+import com.jmstudios.redmoon.appextensions.getContentUri
 import com.jmstudios.redmoon.model.Config
-
-import java.util.Calendar
-
+import com.jmstudios.redmoon.model.Profile
+import java.util.*
 import kotlin.reflect.KClass
 
 val appContext = RedMoonApplication.app
 
 var activeProfile: Profile
-    get() = EventBus.getSticky(Profile::class) ?: with (Config) {
-                Profile(color, intensity, dimLevel, lowerBrightness)
-            }
+    get() = EventBus.getSticky(Profile::class) ?: with(Config) {
+        Profile(color, intensity, dimLevel, lowerBrightness)
+    }
     set(value) = value.let {
-        if (it != EventBus.getSticky(Profile::class)) with (Config) {
+        if (it != EventBus.getSticky(Profile::class)) with(Config) {
             val Log = KLogging.logger("Util")
             Log.i("activeProfile set to $it")
             EventBus.postSticky(it)
@@ -58,6 +58,13 @@ var activeProfile: Profile
 var filterIsOn: Boolean = false
     set(value) {
         field = value
+        val appExtensionState = if (field) {
+            AppExtensionState.START
+        } else {
+            AppExtensionState.STOP
+        }
+        val uri: Uri = getContentUri(appExtensionState.toString())
+        appContext.contentResolver.insert(uri, null)
         Config.filterIsOn = value
     }
 
@@ -94,13 +101,13 @@ fun inActivePeriod(Log: KLog? = null): Boolean {
 }
 
 fun getString(resId: Int): String = appContext.getString(resId)
-fun getColor (resId: Int): Int = ContextCompat.getColor(appContext, resId)
+fun getColor(resId: Int): Int = ContextCompat.getColor(appContext, resId)
 
 fun atLeastAPI(api: Int): Boolean = android.os.Build.VERSION.SDK_INT >= api
-fun belowAPI  (api: Int): Boolean = android.os.Build.VERSION.SDK_INT <  api
+fun belowAPI(api: Int): Boolean = android.os.Build.VERSION.SDK_INT < api
 
 fun intent() = Intent()
-fun <T: Any>intent(kc: KClass<T>) = Intent(appContext, kc.java)
+fun <T : Any> intent(kc: KClass<T>) = Intent(appContext, kc.java)
 
 fun PreferenceFragmentCompat.pref(resId: Int): Preference? {
     return preferenceScreen.findPreference(getString(resId))

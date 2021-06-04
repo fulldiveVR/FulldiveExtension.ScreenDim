@@ -27,6 +27,6 @@ assignees: ''
 Add any other context about the problem here.
 
 **Device info:**
- - Red Moon version (under Red Moon settings): [v3.5.0]
+ - Fulldive Eye Filter version (under Fulldive Eye Filter settings): [v3.5.0]
  - Android version (under Settings > About device): [8.0]
  - Device: [Samsung Galaxy S8]

@@ -28,15 +28,15 @@ if(rootProject.file("keystore.properties").exists()) {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion '29.0.2'
 
     defaultConfig {
-        applicationId "com.jmstudios.redmoon"
+        applicationId "com.fulldive.eyefilter"
         minSdkVersion 14
-        targetSdkVersion 29
-        versionCode 38
-        versionName "3.5.0"
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -45,7 +45,6 @@ android {
         }
 
         debug {
-            applicationIdSuffix '.debug'
             def repo = Grgit.open(currentDir: project.rootDir)
             def commitId = "${repo.log().get(0).getAbbreviatedId()}"
             if (repo.status().isClean()) {

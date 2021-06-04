@@ -58,7 +58,7 @@ object Config : Preferences(appContext) {
         })
 
         // If an app like Tasker wants to do something each time
-        // Red Moon is toggled, it can listen for this event
+        // Fulldive Eye Filter is toggled, it can listen for this event
         context.sendBroadcast(intent().apply {
             action = BROADCAST_ACTION
             putExtra(BROADCAST_FIELD, it)

@@ -86,7 +86,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [3.3.0] — 2017-09-28
 ### Added
-- You can now customize which apps are excluded from filtering. Exclude an app from the Red Moon notification while that app is running.
+- You can now customize which apps are excluded from filtering. Exclude an app from the Fulldive Eye Filter notification while that app is running.
 
 ### Fixed
 - Fixed a bug where backlight brightness was not restored
@@ -114,9 +114,9 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixed
 - Rewrote the "Pause in secure apps" feature to fix crashes and bugs and reduce battery use. Note: this release has added logging which may increase battery use; it will be removed in the next release if no bugs are found.
 - Fix a bug where the filter would not start as scheduled on Android 6.0+
-- When turning off, don't change the backlight brightness if was changed since Red Moon lowered it.
+- When turning off, don't change the backlight brightness if was changed since Fulldive Eye Filter lowered it.
 - Fix crash when upgrading between 3.1.x versions.
-- Fix a bug where profiles would not be saved until Red Moon was closed and re-opened.
+- Fix a bug where profiles would not be saved until Fulldive Eye Filter was closed and re-opened.
 
 ## [3.1.2] — 2017-09-07
 ### Fixed
@@ -128,7 +128,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## [3.1.0] — 2017-09-02
 ### Added
-- Long press on the quick settings tile to open Red Moon
+- Long press on the quick settings tile to open Fulldive Eye Filter
 
 ### Changed
 - Turn the timer on by default
@@ -146,7 +146,7 @@ All notable changes to this project will be documented in this file. The format 
 ### Fixed
 - Fixed a bug where the top switch did not toggle the filter
 - Fixed a bug where the fade transition would not play if the filter was toggled mid-transition.
-- Fixed bugs when Red Moon is killed throug Android
+- Fixed bugs when Fulldive Eye Filter is killed throug Android
 
 ## [3.0.0] — 2017-04-23
 ### Added
@@ -178,7 +178,7 @@ All notable changes to this project will be documented in this file. The format 
 - Updated the intro so it doesn't overflow on small screens
 - Fall back to GPS if network location is turned off (network location is still used by default, for battery savings)
 - More accurate location update messages
-- Fixed a bug where changes to 'Pause in secure apps' did not apply until Red Moon was killed
+- Fixed a bug where changes to 'Pause in secure apps' did not apply until Fulldive Eye Filter was killed
 
 ### Removed
 - Remove location preference
@@ -186,7 +186,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [2.10.1] — 2017-03-12
 ### Added
 - Allow choosing how hardware buttons are dimmed
-- Notification shows when Red Moon is paused in a secure app
+- Notification shows when Fulldive Eye Filter is paused in a secure app
 
 ### Changed
 - Update notification icon
@@ -202,18 +202,18 @@ All notable changes to this project will be documented in this file. The format 
 - Added timer subscreen
 - Added about page
 - Use GPS on devices that can't get a network location
-- [For developers and power users] Notify other apps when Red Moon toggles (details on the about page).
+- [For developers and power users] Notify other apps when Fulldive Eye Filter toggles (details on the about page).
 - Added Italian translation — @matteocoder
 
 ### Changed
-- Refer to "Red Moon" instead of "The filter"
-- Top switch toggles Red Moon on and off (instead of enabling/disabling all functionality)
+- Refer to "Fulldive Eye Filter" instead of "The filter"
+- Top switch toggles Fulldive Eye Filter on and off (instead of enabling/disabling all functionality)
 - Update notification and widget phrasing/icons
 - Updated translations
 
 ### Fixed
 - Don't stop searching for location when the app is closed
-- Fixed a bug where Red Moon didn't pause in new versions of the package installer
+- Fixed a bug where Fulldive Eye Filter didn't pause in new versions of the package installer
 - Many small bugfixes
 
 ### Removed

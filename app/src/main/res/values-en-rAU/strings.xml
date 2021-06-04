@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Red Moon</string>
-    <string name="activity_main">Red Moon</string>
-    <string name="activity_shortcut">Red Moon Toggle</string>
+    <string name="app_name">Fulldive Eye Filter</string>
+    <string name="activity_main">Fulldive Eye Filter</string>
+    <string name="activity_shortcut">Fulldive Eye Filter Toggle</string>
     <string name="activity_intro">Intro</string>
     <string name="menu_show_intro">Show intro</string>
     <string name="notification_status_paused">Paused</string>
@@ -34,7 +34,7 @@
     <string name="pref_summary_project_page">Find more info, leave feedback and contribute</string>
     <string name="toast_warning_install">You won\'t be able to install APKs while the filter is running.</string>
     <string name="snackbar_warning_no_location">Enable location services to update location</string>
-    <string name="help_snackbar_text">Press the switch to enable Red Moon</string>
+    <string name="help_snackbar_text">Press the switch to enable Fulldive Eye Filter</string>
     <string name="dialog_title_add_filter">Enter profile name</string>
     <string name="edit_hint_add_filter">Profile name</string>
     <string name="dialog_title_remove_filter">Delete this profile?</string>
@@ -42,17 +42,17 @@
     <string name="dialog_button_cancel">Cancel</string>
     <string name="shortcut_title_toggle">Toggle Filter</string>
     <string name="slide_title_welcome">Welcome!</string>
-    <string name="slide_text_welcome">Welcome to Red Moon!</string>
+    <string name="slide_text_welcome">Welcome to Fulldive Eye Filter!</string>
     <string name="slide_title_protect_eyes">Protecting your eyes</string>
     <string name="slide_text_protect_eyes">At night, when looking at your
-        phone hurts your eyes, you can use Red Moon to dim your screen.</string>
+        phone hurts your eyes, you can use Fulldive Eye Filter to dim your screen.</string>
     <string name="slide_title_improve_sleep">Improving your sleep</string>
     <string name="slide_text_improve_sleep">Blue light suppresses the
         production of Melatonin, a hormone that helps you fall asleep at
-        night. Red Moon removes the blue light from your screen, ensuring
+        night. Fulldive Eye Filter removes the blue light from your screen, ensuring
         you can fall asleep easily.</string>
     <string name="slide_title_get_started">Get started!</string>
-    <string name="slide_text_get_started">To enable Red Moon, press the
+    <string name="slide_text_get_started">To enable Fulldive Eye Filter, press the
         switch in the top right corner.</string>
     <string name="filter_name_custom">Custom</string>
     <string name="filter_name_default">Default</string>
@@ -69,7 +69,7 @@
     <string name="toast_warning_no_location">Enable location services to update location</string>
     <string name="set_dialog">Set</string>
     <string name="notification_status_running">Running. Pause to install apks</string>
-    <string name="activity_about">About Red Moon</string>
+    <string name="activity_about">About Fulldive Eye Filter</string>
     <string name="activity_secure_suspend">Pause in excluded apps</string>
     <string name="menu_restore_default_filters">Restore default profiles</string>
     <string name="menu_about">About</string>
@@ -83,27 +83,27 @@
     <string name="pref_title_secure_suspend">Pause in excluded apps</string>
     <string name="pref_title_button_backlight">Hardware button backlight</string>
     <string name="pref_summary_use_location">Based on your location</string>
-    <string name="pref_summary_secure_suspend">When this feature is enabled, Red Moon will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Red Moon is running*, like installing apks. You can change this behaviour for the current screen of the current app from the notification. For example, you might want to add colour-sensitive apps, like the camera.
+    <string name="pref_summary_secure_suspend">When this feature is enabled, Fulldive Eye Filter will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Fulldive Eye Filter is running*, like installing apks. You can change this behaviour for the current screen of the current app from the notification. For example, you might want to add colour-sensitive apps, like the camera.
 \n
 \nThis feature may slightly lower the battery life of your device.
 \n
-\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Red Moon is on, since it works by drawing a transparent red layer over the screen.</string>
+\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Fulldive Eye Filter is on, since it works by drawing a transparent red layer over the screen.</string>
     <string name="text_switch_on">On</string>
     <string name="text_switch_off">Off</string>
     <string name="pref_title_version">Version</string>
     <string name="pref_title_integration">Integration with other apps</string>
-    <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Red Moon sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.
+    <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Fulldive Eye Filter sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.
 \n
-\nRed Moon broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Red Moon is toggling on or off.</string>
+\nFulldive Eye Filter broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Fulldive Eye Filter is toggling on or off.</string>
     <string name="snackbar_location_updated">Found location!</string>
     <string name="dialog_title_permission_overlay">Drawing over other apps</string>
-    <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Red Moon to turn on.</string>
+    <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Fulldive Eye Filter to turn on.</string>
     <string name="dialog_title_permission_write_settings">Modifying system settings</string>
-    <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Red Moon to change your brightness level.</string>
+    <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Fulldive Eye Filter to change your brightness level.</string>
     <string name="dialog_title_permission_usage_stats">Usage access</string>
-    <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Red Moon to pause in secured apps.
+    <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Fulldive Eye Filter to pause in secured apps.
 \n
-\nRed Moon will use this data only to determine whether you are using an app which will not work when Red Moon is on.</string>
+\nFulldive Eye Filter will use this data only to determine whether you are using an app which will not work when Fulldive Eye Filter is on.</string>
     <string name="filter_name_dim_only">Dim only</string>
     <string name="pref_entry_button_backlight_system">System managed</string>
     <string name="pref_entry_button_backlight_filter_dim_level">Use filter dim level</string>
@@ -121,7 +121,7 @@
     <string name="pref_title_stop_time">Stop time</string>
     <string name="pref_title_translators">Help translate</string>
     <string name="pref_summary_translators">Translators: smichel17, raatmarien, Mostafa Ahangarha</string>
-    <string name="toast_warning_secured">Some features of this app might not work while Red Moon is running.</string>
+    <string name="toast_warning_secured">Some features of this app might not work while Fulldive Eye Filter is running.</string>
     <string name="notification_action_whitelist_add">Exclude app</string>
     <string name="notification_action_whitelist_remove">Filter app</string>
     <string name="notification_channel_overlay_name">Overlay Control</string>

@@ -30,15 +30,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-import com.jmstudios.redmoon.R
-
+import com.jmstudios.redmoon.appextensions.ExtensionContentProvider
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.settings.SettingsActivity
 import com.jmstudios.redmoon.util.*
-
 import org.greenrobot.eventbus.Subscribe
 
 class MainActivity : ThemedAppCompatActivity() {
@@ -46,7 +43,8 @@ class MainActivity : ThemedAppCompatActivity() {
     data class UI(val isOpen: Boolean) : EventBus.Event
 
     companion object : Logger() {
-        const val EXTRA_FROM_SHORTCUT_BOOL = "com.jmstudios.redmoon.activity.MainActivity.EXTRA_FROM_SHORTCUT_BOOL"
+        const val EXTRA_FROM_SHORTCUT_BOOL =
+            "com.jmstudios.redmoon.activity.MainActivity.EXTRA_FROM_SHORTCUT_BOOL"
     }
 
     override val fragment = FilterFragment()
@@ -57,15 +55,26 @@ class MainActivity : ThemedAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
         Log.i("Got intent")
-        if (fromShortcut) { toggleAndFinish() }
+        if (fromShortcut) {
+            toggleAndFinish()
+        }
 
         super.onCreate(savedInstanceState)
 
-        if (!Config.introShown) { startActivity(intent(Intro::class)) }
+        if (!Config.introShown) {
+            startActivity(intent(Intro::class))
+        }
         showChangelogAuto(this)
 
         fab.setOnClickListener { _ -> Command.toggle() }
         fab.visibility = View.VISIBLE
+        val extras = intent.extras
+        if (extras != null) {
+            val workStatus = extras.getString(ExtensionContentProvider.WORK_STATUS)
+            if (workStatus != null) {
+                Command.toggle()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -103,7 +112,9 @@ class MainActivity : ThemedAppCompatActivity() {
         Log.i("onNewIntent")
         super.onNewIntent(intent)
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
-        if (fromShortcut) { toggleAndFinish() }
+        if (fromShortcut) {
+            toggleAndFinish()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -131,12 +142,14 @@ class MainActivity : ThemedAppCompatActivity() {
         finish()
     }
 
-    @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
+    @Subscribe
+    fun onFilterIsOnChanged(event: filterIsOnChanged) {
         Log.i("FilterIsOnChanged")
         setFabIcon()
     }
 
-    @Subscribe fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
+    @Subscribe
+    fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
         setFabIcon(false)
         Permission.Overlay.request(this)
     }
