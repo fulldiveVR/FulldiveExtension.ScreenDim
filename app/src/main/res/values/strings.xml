@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Fulldive Eye Filter</string>
+    <string name="app_name">Blue Light Filter</string>
 
     <!-- Activities -->
-    <string name="activity_main">Fulldive Eye Filter</string>
-    <string name="activity_shortcut">Fulldive Eye Filter Toggle</string>
+    <string name="activity_main">Blue Light Filter</string>
+    <string name="activity_shortcut">Blue Light Filter Toggle</string>
     <string name="activity_intro">Intro</string>
     <string name="activity_settings">Settings</string>
-    <string name="activity_about">About Fulldive Eye Filter</string>
+    <string name="activity_about">About Blue Light Filter</string>
     <string name="activity_secure_suspend">Pause in excluded apps</string>
     <string name="activity_schedule">Schedule</string>
     <string name="activity_timer">Timer</string>
@@ -65,7 +65,7 @@
     <string name="pref_title_location">Location</string>
     <string name="pref_title_dark_theme">Dark theme</string>
 
-    <string name="pref_summary_secure_suspend">When this feature is enabled, Fulldive Eye Filter will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Fulldive Eye Filter is running*, like installing apks. You can change this behavior for the current screen of the current app from the notification. For example, you might want to add color-sensitive apps, like the camera.\n\nThis feature may slightly lower the battery life of your device.\n\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Fulldive Eye Filter is on, since it works by drawing a transparent red layer over the screen.</string>
+    <string name="pref_summary_secure_suspend">When this feature is enabled, Blue Light Filter will automatically pause when certain apps are open. By default, this includes apps that won\'t work when Blue Light Filter is running*, like installing apks. You can change this behavior for the current screen of the current app from the notification. For example, you might want to add color-sensitive apps, like the camera.\n\nThis feature may slightly lower the battery life of your device.\n\n*Some apps are secured against overlays to protect themselves from interference, like tricking you into installing an app you don\'t want. They won\'t respond to touches when Blue Light Filter is on, since it works by drawing a transparent red layer over the screen.</string>
 
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Add</string>
@@ -91,17 +91,17 @@
     <string name="pref_summary_translators">Translators: smichel17, raatmarien, Mostafa Ahangarha</string>
 
     <string name="pref_title_integration">Integration with other apps</string>
-    <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Fulldive Eye Filter sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.\n\nFulldive Eye Filter broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Fulldive Eye Filter is toggling on or off.</string>
+    <string name="pref_summary_integration">Some apps, like LibreTasks or Tasker, allow you to automate tasks when certain events happen. Blue Light Filter sends a public notification when it turns on and off, so those apps can respond. If you don\'t use or develop one of those apps, you can ignore the next paragraph.\n\nBlue Light Filter broadcasts a public intent with the action `com.jmstudios.redmoon.RED_MOON_TOGGLED`. The intent contains a boolean extra with the key `jmstudios.bundle.key.FILTER_IS_ON`, which indicates whether Blue Light Filter is toggling on or off.</string>
 
     <!-- Toasts -->
-    <string name="toast_warning_install">You won\'t be able to install APKs while the Fulldive Eye Filter is on.</string>
-    <string name="toast_warning_secured">Some features of this app might not work while Fulldive Eye Filter is running.</string>
+    <string name="toast_warning_install">You won\'t be able to install APKs while the Blue Light Filter is on.</string>
+    <string name="toast_warning_secured">Some features of this app might not work while Blue Light Filter is running.</string>
 
     <!-- Snackbar -->
     <string name="snackbar_warning_no_location">Enable location services to update location</string>
     <string name="snackbar_searching_location">Searching for location</string>
     <string name="snackbar_location_updated">Found location!</string>
-    <string name="help_snackbar_text">Press the switch to enable Fulldive Eye Filter</string>
+    <string name="help_snackbar_text">Press the switch to enable Blue Light Filter</string>
 
     <!-- Dialog -->
     <string name="dialog_title_add_filter">Enter filter name</string>
@@ -109,36 +109,36 @@
     <string name="dialog_title_remove_filter">Delete this filter?</string>
 
     <string name="dialog_title_permission_overlay">Drawing over other apps</string>
-    <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Fulldive Eye Filter to turn on.</string>
+    <string name="dialog_message_permission_overlay">Permit drawing over other apps in the next screen to allow Blue Light Filter to turn on.</string>
 
     <string name="dialog_title_permission_write_settings">Modifying system settings</string>
-    <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Fulldive Eye Filter to change your brightness level.</string>
+    <string name="dialog_message_permission_write_settings">Permit modifying system settings in the next screen to allow Blue Light Filter to change your brightness level.</string>
 
     <string name="dialog_title_permission_usage_stats">Usage access</string>
-    <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Fulldive Eye Filter to pause in secured apps.\n\nFulldive Eye Filter will use this data only to determine whether you are using an app which will not work when Fulldive Eye Filter is on.</string>
+    <string name="dialog_message_permission_usage_stats">Permit usage access in the next screen to allow Blue Light Filter to pause in secured apps.\n\nBlue Light Filter will use this data only to determine whether you are using an app which will not work when Blue Light Filter is on.</string>
 
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Cancel</string>
 
     <!-- Shortcuts -->
-    <string name="shortcut_title_toggle">Toggle Fulldive Eye Filter</string>
+    <string name="shortcut_title_toggle">Toggle Blue Light Filter</string>
 
     <!-- Intro -->
     <string name="slide_title_welcome">Welcome!</string>
-    <string name="slide_text_welcome">Welcome to Fulldive Eye Filter!</string>
+    <string name="slide_text_welcome">Welcome to Blue Light Filter!</string>
 
     <string name="slide_title_protect_eyes">Protecting your eyes</string>
     <string name="slide_text_protect_eyes">At night, when looking at your
-        phone hurts your eyes, you can use Fulldive Eye Filter to dim your screen.</string>
+        phone hurts your eyes, you can use Blue Light Filter to dim your screen.</string>
 
     <string name="slide_title_improve_sleep">Improving your sleep</string>
     <string name="slide_text_improve_sleep">Blue light suppresses the
         production of Melatonin, a hormone that helps you fall asleep at
-        night. Fulldive Eye Filter removes the blue light from your screen, ensuring
+        night. Blue Light Filter removes the blue light from your screen, ensuring
         you can fall asleep easily.</string>
 
     <string name="slide_title_get_started">Get started!</string>
-    <string name="slide_text_get_started">Turn Fulldive Eye Filter on and off with the switch
+    <string name="slide_text_get_started">Turn Blue Light Filter on and off with the switch
         in the top right corner.</string>
 
     <!-- Profiles -->

@@ -45,7 +45,7 @@ import java.util.concurrent.TimeUnit
  * location fix, we shut down the service. When we shut down (for any reason),
  * we update the location with the last known location. This way, even if we
  * didn't get a fix before the service was stopped, we might be able to get
- * something more recent than the last time Fulldive Eye Filter updated location.
+ * something more recent than the last time Blue Light Filter updated location.
  */
 class LocationUpdateService: Service(), LocationListener {
 

@@ -1,35 +1,14 @@
-/*
- * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
- * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * This file incorporates work covered by the following copyright and
- * permission notice:
- *
- *     Copyright (c) 2015 Chris Nguyen
- *
- *     Permission to use, copy, modify, and/or distribute this software
- *     for any purpose with or without fee is hereby granted, provided
- *     that the above copyright notice and this permission notice appear
- *     in all copies.
- *
- *     THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
- *     WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
- *     WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
- *     AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
- *     CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
- *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
- *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- */
 package com.jmstudios.redmoon
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.widget.SwitchCompat
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import com.jmstudios.redmoon.appextensions.ExtensionContentProvider
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
@@ -50,7 +29,7 @@ class MainActivity : ThemedAppCompatActivity() {
     override val fragment = FilterFragment()
     override val tag = "jmstudios.fragment.tag.FILTER"
 
-    private val fab: FloatingActionButton get() = findViewById(R.id.fab_toggle)
+    private val switchView: SwitchCompat get() = findViewById(R.id.switchView)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
@@ -62,12 +41,13 @@ class MainActivity : ThemedAppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         if (!Config.introShown) {
+            switchView.visibility = View.GONE
             startActivity(intent(Intro::class))
         }
         showChangelogAuto(this)
 
-        fab.setOnClickListener { _ -> Command.toggle() }
-        fab.visibility = View.VISIBLE
+        switchView.setOnCheckedChangeListener { _, _ -> Command.toggle() }
+        switchView.visibility = View.VISIBLE
         val extras = intent.extras
         if (extras != null) {
             val workStatus = extras.getString(ExtensionContentProvider.WORK_STATUS)
@@ -82,10 +62,6 @@ class MainActivity : ThemedAppCompatActivity() {
         return true
     }
 
-    private fun setFabIcon(on: Boolean = filterIsOn) {
-        fab.setImageResource(if (on) R.drawable.fab_pause else R.drawable.fab_start)
-    }
-
     override fun onStart() {
         super.onStart()
         EventBus.postSticky(UI(isOpen = true))
@@ -94,7 +70,7 @@ class MainActivity : ThemedAppCompatActivity() {
     override fun onResume() {
         Log.i("onResume")
         super.onResume()
-        setFabIcon()
+        setOnCheckChanged()
         EventBus.register(this)
     }
 
@@ -137,20 +113,24 @@ class MainActivity : ThemedAppCompatActivity() {
         return true
     }
 
-    private fun toggleAndFinish() {
-        Command.toggle(!filterIsOn)
-        finish()
-    }
-
     @Subscribe
     fun onFilterIsOnChanged(event: filterIsOnChanged) {
         Log.i("FilterIsOnChanged")
-        setFabIcon()
+        setOnCheckChanged()
     }
 
     @Subscribe
     fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
-        setFabIcon(false)
+        setOnCheckChanged(false)
         Permission.Overlay.request(this)
+    }
+
+    private fun setOnCheckChanged(on: Boolean = filterIsOn) {
+        if (switchView.isChecked != on) switchView.isChecked = on
+    }
+
+    private fun toggleAndFinish() {
+        Command.toggle(!filterIsOn)
+        finish()
     }
 }

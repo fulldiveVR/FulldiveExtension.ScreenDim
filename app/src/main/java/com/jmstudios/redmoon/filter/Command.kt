@@ -26,10 +26,11 @@ enum class Command(val time: Float) {
     OFF(DURATION_LONG) {
         override val turnOn: Boolean = false
         override fun onAnimationStart(service: FilterService) {
-            service.stopForeground(true)
+            service.onDestroy()
         }
+
         override fun onAnimationEnd(service: FilterService) {
-            service.stopSelf()
+            service.onDestroy()
         }
     },
     PAUSE(DURATION_SHORT) {
@@ -59,8 +60,7 @@ enum class Command(val time: Float) {
 
         override fun onAnimationEnd(service: FilterService) {
             if (filterWasOn != true) {
-                service.stopForeground(true)
-                service.stopSelf()
+                service.onDestroy()
                 filterWasOn = null
             }
         }

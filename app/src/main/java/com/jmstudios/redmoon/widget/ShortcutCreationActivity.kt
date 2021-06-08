@@ -24,7 +24,7 @@ class ShortcutCreationActivity : Activity() {
         shortcutIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
 
         // See: http://www.kind-kristiansen.no/2010/android-adding-desktop-shortcut-support-to-your-app/
-        val iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.toggle_icon)
+        val iconResource = Intent.ShortcutIconResource.fromContext(this, R.mipmap.ic_launcher_round)
 
         val intent = Intent()
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent)

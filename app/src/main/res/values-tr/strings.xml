@@ -23,12 +23,12 @@
  *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 --><resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Fulldive Eye Filter</string>
+    <string name="app_name">Blue Light Filter</string>
     <!-- Activities -->
-    <string name="activity_main">Fulldive Eye Filter</string>
-    <string name="activity_shortcut">Fulldive Eye Filter\'u Aç/Kapa</string>
+    <string name="activity_main">Blue Light Filter</string>
+    <string name="activity_shortcut">Blue Light Filter\'u Aç/Kapa</string>
     <string name="activity_intro">Tanıtım</string>
-    <string name="activity_about">Fulldive Eye Filter Hakkında</string>
+    <string name="activity_about">Blue Light Filter Hakkında</string>
     <string name="activity_secure_suspend">Dışlanan uygulamalarda duraklat</string>
     <string name="activity_schedule">Zamanlama</string>
     <string name="activity_timer">Zamanlayıcı</string>
@@ -73,11 +73,11 @@
     <string name="pref_title_stop_time">Bitiş zamanı</string>
     <string name="pref_title_use_location">Gün Batımından Gün Doğumuna</string>
     <string name="pref_summary_use_location">Konumunuza göre</string>
-    <string name="pref_summary_secure_suspend">Bu ayar etkinleştirildiğinde Fulldive Eye Filter belli uygulamalar açıkken kendiliğinden duraklayacaktır. Öntanımlı olarak bu, apk yükleme gibi Fulldive Eye Filter çalışıyorken* çalışmayacak uygulamaları içerir. Bildirimden geçerli uygulamanın geçerli ekranı için bu davranışı değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamaları eklemek isteyebilirsiniz.
+    <string name="pref_summary_secure_suspend">Bu ayar etkinleştirildiğinde Blue Light Filter belli uygulamalar açıkken kendiliğinden duraklayacaktır. Öntanımlı olarak bu, apk yükleme gibi Blue Light Filter çalışıyorken* çalışmayacak uygulamaları içerir. Bildirimden geçerli uygulamanın geçerli ekranı için bu davranışı değiştirebilirsiniz. Örneğin, kamera gibi renge duyarlı uygulamaları eklemek isteyebilirsiniz.
 \n 
 \nBu özellik aygıtınızın pil ömrünü biraz düşürebilir. 
 \n 
-\n*Bazı uygulamalar kendilerini etkilemelerden korumak için örten tabakalara karşı korumalıdır, örneğin istemediğiniz bir uygulamayı yüklemek için kandırılmanız gibi. Ekran üzerine saydam kırmızı katman çizerek çalışan Fulldive Eye Filter açıkken, o uygulamalar dokunmaları yanıtlamayacaktır.</string>
+\n*Bazı uygulamalar kendilerini etkilemelerden korumak için örten tabakalara karşı korumalıdır, örneğin istemediğiniz bir uygulamayı yüklemek için kandırılmanız gibi. Ekran üzerine saydam kırmızı katman çizerek çalışan Blue Light Filter açıkken, o uygulamalar dokunmaları yanıtlamayacaktır.</string>
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Ekle</string>
     <string name="button_remove_filter">Sil</string>
@@ -96,42 +96,42 @@
     <!-- Add your name or handle here if you would like credit in the app -->
     <string name="pref_summary_translators">Çevirmenler: mission712, oguz-ismail, onuricen, emintufan</string>
     <string name="pref_title_integration">Diğer uygulamalarla entegrasyon</string>
-    <string name="pref_summary_integration">LibreTasks veya Tasker gibi bazı uygulamalar, belirli etkinlikler gerçekleştiğinde görevleri kendiliğinden gerçekleştirmenize izin verir. Fulldive Eye Filter, açılıp kapandığıda herkese açık bir bildirim gönderir, böylece bu uygulamalar karşılık verebilir. Bu uygulamalardan birini geliştirmiyor veya kullanmıyorsanız, sonraki paragrafi yok sayabilirsiniz.\n
+    <string name="pref_summary_integration">LibreTasks veya Tasker gibi bazı uygulamalar, belirli etkinlikler gerçekleştiğinde görevleri kendiliğinden gerçekleştirmenize izin verir. Blue Light Filter, açılıp kapandığıda herkese açık bir bildirim gönderir, böylece bu uygulamalar karşılık verebilir. Bu uygulamalardan birini geliştirmiyor veya kullanmıyorsanız, sonraki paragrafi yok sayabilirsiniz.\n
  \n
- Fulldive Eye Filter, `com.jmstudios.redmoon.RED_MOON_TOGGLED` eylemiyle açık bir \"intent\" yayımlar. Bu \"intent\", Fulldive Eye Filter\'un açılıp kapatıldığını belirten `jmstudios.bundle.key.FILTER_IS_ON` anahtarıyla bir \"boolean extra\" içerir.</string>
+ Blue Light Filter, `com.jmstudios.redmoon.RED_MOON_TOGGLED` eylemiyle açık bir \"intent\" yayımlar. Bu \"intent\", Blue Light Filter\'un açılıp kapatıldığını belirten `jmstudios.bundle.key.FILTER_IS_ON` anahtarıyla bir \"boolean extra\" içerir.</string>
     <!-- Toasts -->
-    <string name="toast_warning_install">Fulldive Eye Filter çalışırken APK yükleyemezsiniz.</string>
-    <string name="toast_warning_secured">Bu uygulamanın bazı özellikleri Fulldive Eye Filter aktifken çalışmayabilir.</string>
+    <string name="toast_warning_install">Blue Light Filter çalışırken APK yükleyemezsiniz.</string>
+    <string name="toast_warning_secured">Bu uygulamanın bazı özellikleri Blue Light Filter aktifken çalışmayabilir.</string>
     <!-- Snackbar -->
     <string name="snackbar_warning_no_location">Konumu güncellemek için konum hizmetlerini aç</string>
     <string name="snackbar_searching_location">Konum aranıyor</string>
     <string name="snackbar_location_updated">Konum bulundu!</string>
-    <string name="help_snackbar_text">Fulldive Eye Filter\'u etkinleştirmek için düğmeye bas</string>
+    <string name="help_snackbar_text">Blue Light Filter\'u etkinleştirmek için düğmeye bas</string>
     <!-- Dialog -->
     <string name="dialog_title_add_filter">Süzgeç adı girin</string>
     <string name="edit_hint_add_filter">Süzgeç adı</string>
     <string name="dialog_title_remove_filter">Bu süzgeç silinsin mi?</string>
     <string name="dialog_title_permission_overlay">Diğer uygulamalar üzerine çizim</string>
-    <string name="dialog_message_permission_overlay">Fulldive Eye Filter\'un açılması için sonraki ekranda diğer uygulamar üzerine çizime izin verin.</string>
+    <string name="dialog_message_permission_overlay">Blue Light Filter\'un açılması için sonraki ekranda diğer uygulamar üzerine çizime izin verin.</string>
     <string name="dialog_title_permission_write_settings">Sistem ayarlarını değiştirme</string>
-    <string name="dialog_message_permission_write_settings">Sonraki ekranda Fulldive Eye Filter\'a parlaklık düzeyinizi değiştirme izni vermek için sistem ayarlarını değiştirmeye izin verin.</string>
+    <string name="dialog_message_permission_write_settings">Sonraki ekranda Blue Light Filter\'a parlaklık düzeyinizi değiştirme izni vermek için sistem ayarlarını değiştirmeye izin verin.</string>
     <string name="dialog_title_permission_usage_stats">Kullanım erişimi</string>
-    <string name="dialog_message_permission_usage_stats">Bu özelliği etkinleştirmek için sonraki ekranda Fulldive Eye Filter\'un uygulama kullanım bilgilerine erişmesine izin verin.\n
+    <string name="dialog_message_permission_usage_stats">Bu özelliği etkinleştirmek için sonraki ekranda Blue Light Filter\'un uygulama kullanım bilgilerine erişmesine izin verin.\n
  \n
- Fulldive Eye Filter bu izni sadece hangi uygulamanın içinde olduğunuzu görmek ve güvenli uygulamalarda süzgeci askıya almak için kullanır.</string>
+ Blue Light Filter bu izni sadece hangi uygulamanın içinde olduğunuzu görmek ve güvenli uygulamalarda süzgeci askıya almak için kullanır.</string>
     <string name="dialog_button_ok">Tamam</string>
     <string name="dialog_button_cancel">İptal</string>
     <!-- Shortcuts -->
-    <string name="shortcut_title_toggle">Fulldive Eye Filter\'u Aç/Kapa</string>
+    <string name="shortcut_title_toggle">Blue Light Filter\'u Aç/Kapa</string>
     <!-- Intro -->
     <string name="slide_title_welcome">Hoş geldiniz!</string>
-    <string name="slide_text_welcome">Fulldive Eye Filter\'a hoş geldiniz!</string>
+    <string name="slide_text_welcome">Blue Light Filter\'a hoş geldiniz!</string>
     <string name="slide_title_protect_eyes">Gözlerinizi korur</string>
-    <string name="slide_text_protect_eyes">Geceleri telefonunuza bakmak gözlerinizi rahatsız ettiğinde, ekranınızı karartmak için Fulldive Eye Filter\'u kullanabilirsiniz.</string>
+    <string name="slide_text_protect_eyes">Geceleri telefonunuza bakmak gözlerinizi rahatsız ettiğinde, ekranınızı karartmak için Blue Light Filter\'u kullanabilirsiniz.</string>
     <string name="slide_title_improve_sleep">Uykunuzu iyileştirir</string>
-    <string name="slide_text_improve_sleep">Mavi ışık geceleri uyumanızı  sağlayan Melatonin hormonu üretimini baskılar.  Fulldive Eye Filter daha kolay uyumanız için ekranınızdaki  mavi ışığı kaldırır.</string>
+    <string name="slide_text_improve_sleep">Mavi ışık geceleri uyumanızı  sağlayan Melatonin hormonu üretimini baskılar.  Blue Light Filter daha kolay uyumanız için ekranınızdaki  mavi ışığı kaldırır.</string>
     <string name="slide_title_get_started">Başlayın!</string>
-    <string name="slide_text_get_started">Fulldive Eye Filter\'u sağ üst köşedeki düğmeyle açıp kapatabilirsiniz.</string>
+    <string name="slide_text_get_started">Blue Light Filter\'u sağ üst köşedeki düğmeyle açıp kapatabilirsiniz.</string>
     <!-- Profiles -->
     <string name="filter_name_custom">Özel</string>
     <string name="filter_name_default">Öntanımlı</string>

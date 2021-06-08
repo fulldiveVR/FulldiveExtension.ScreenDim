@@ -27,6 +27,6 @@ assignees: ''
 Add any other context about the problem here.
 
 **Device info:**
- - Fulldive Eye Filter version (under Fulldive Eye Filter settings): [v3.5.0]
+ - Blue Light Filter version (under Blue Light Filter settings): [v3.5.0]
  - Android version (under Settings > About device): [8.0]
  - Device: [Samsung Galaxy S8]

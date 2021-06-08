@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- App Name and Activity Labels -->
-    <string name="app_name">Fulldive Eye Filter</string>
-    <string name="activity_main">Fulldive Eye Filter</string>
-    <string name="activity_shortcut">Переключатель Fulldive Eye Filter</string>
+    <string name="app_name">Blue Light Filter</string>
+    <string name="activity_main">Blue Light Filter</string>
+    <string name="activity_shortcut">Переключатель Blue Light Filter</string>
     <!-- Notification -->
     <string name="notification_status_paused">Приостановлено</string>
     <!-- Preference -->
@@ -34,10 +34,10 @@
     <string name="pref_title_project_page">Посетить страницу проекта</string>
     <string name="pref_summary_project_page">Увидеть подробную информацию, оставить отзыв и помочь с проектом</string>
     <!-- Toasts -->
-    <string name="toast_warning_install">Вы не сможете устанавливать приложения, пока Fulldive Eye Filter включено.</string>
+    <string name="toast_warning_install">Вы не сможете устанавливать приложения, пока Blue Light Filter включено.</string>
     <string name="snackbar_warning_no_location">Включите службу определения местоположения для обновления местоположения</string>
     <!-- Snackbar -->
-    <string name="help_snackbar_text">Нажмите на переключатель, чтобы включить Fulldive Eye Filter</string>
+    <string name="help_snackbar_text">Нажмите на переключатель, чтобы включить Blue Light Filter</string>
     <!-- Dialog -->
     <string name="dialog_title_add_filter">Введите название профиля</string>
     <string name="edit_hint_add_filter">Названия профиля</string>
@@ -45,7 +45,7 @@
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Отмена</string>
     <!-- Shortcuts -->
-    <string name="shortcut_title_toggle">Вкл/Выкл Fulldive Eye Filter</string>
+    <string name="shortcut_title_toggle">Вкл/Выкл Blue Light Filter</string>
     <!-- Profiles -->
     <!-- standard_profiles_array -->
     <string name="filter_name_custom">Свой</string>
@@ -62,30 +62,30 @@
     <string name="notification_action_resume">Продолжить</string>
     <string name="activity_secure_suspend">Приостанавливать в привилегированных приложениях</string>
     <string name="pref_title_secure_suspend">Приостанавливать в привилегированных приложениях</string>
-    <string name="pref_summary_secure_suspend">Некоторые функции могут не работать, когда приложение Fulldive Eye Filter запущено*. Например, установка APK-файлов, предоставление разрешений приложениям или использование приложения SuperUser (на рутованных устройствах).
+    <string name="pref_summary_secure_suspend">Некоторые функции могут не работать, когда приложение Blue Light Filter запущено*. Например, установка APK-файлов, предоставление разрешений приложениям или использование приложения SuperUser (на рутованных устройствах).
 \n 
-\nЕсли эта настройка включена, Fulldive Eye Filter приостановит свою работу, когда одна из таких функций будет запущена.
+\nЕсли эта настройка включена, Blue Light Filter приостановит свою работу, когда одна из таких функций будет запущена.
 \n 
 \nЭта настройка слегка снижает продолжительность работы устройства от аккумулятора. 
 \n 
-\n*Fulldive Eye Filter создаёт прозрачный слой красного цвета поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
+\n*Blue Light Filter создаёт прозрачный слой красного цвета поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
     <string name="text_switch_on">Вкл</string>
     <string name="text_switch_off">Выкл</string>
-    <string name="dialog_message_permission_usage_stats">Разрешите Fulldive Eye Filter доступ к просмотру запущенных приложений в следующем окне, чтобы включить эту функцию.
+    <string name="dialog_message_permission_usage_stats">Разрешите Blue Light Filter доступ к просмотру запущенных приложений в следующем окне, чтобы включить эту функцию.
 \n
-\nFulldive Eye Filter будет использовать эти данные только чтобы определять, является ли запущенное приложение привилегированным.</string>
+\nBlue Light Filter будет использовать эти данные только чтобы определять, является ли запущенное приложение привилегированным.</string>
     <string name="slide_title_welcome">Добро пожаловать!</string>
-    <string name="slide_text_welcome">Добро пожаловать в Fulldive Eye Filter!</string>
+    <string name="slide_text_welcome">Добро пожаловать в Blue Light Filter!</string>
     <string name="slide_title_protect_eyes">Защита глаз</string>
     <string name="slide_text_protect_eyes">Ночью, когда экран вашего телефона
-режет вам глаза, вы можете использовать Fulldive Eye Filter, чтобы затемнить экран.</string>
+режет вам глаза, вы можете использовать Blue Light Filter, чтобы затемнить экран.</string>
     <string name="slide_title_improve_sleep">Улучшение сна</string>
     <string name="slide_text_improve_sleep">Синий свет подавляет
 \nпроизводство мелатонина — гормона, который помогает людям
-\nзаснуть ночью. Fulldive Eye Filter убирает синий цвет с вашего экрана,
+\nзаснуть ночью. Blue Light Filter убирает синий цвет с вашего экрана,
 \nчтобы вы могли засыпать с лёгкостью.</string>
     <string name="slide_title_get_started">Начать!</string>
-    <string name="slide_text_get_started">Включайте и выключайте Fulldive Eye Filter нажатием на кнопку
+    <string name="slide_text_get_started">Включайте и выключайте Blue Light Filter нажатием на кнопку
 в правом верхнем углу.</string>
     <string name="dialog_title_permission_usage_stats">Разрешить доступ к запущенным приложениям</string>
     <!-- Currently unused -->
@@ -96,11 +96,11 @@
     <string name="searching_location">Поиск местоположения</string>
     <string name="toast_warning_no_location">Включите службу автоматического определения местоположения</string>
     <string name="menu_about">О приложении</string>
-    <string name="activity_about">О Fulldive Eye Filter</string>
+    <string name="activity_about">О Blue Light Filter</string>
     <string name="dialog_title_permission_overlay">Поверх других приложений</string>
-    <string name="dialog_message_permission_overlay">Разрешите наложение поверх других приложений в следующем окне, чтобы позволить Fulldive Eye Filter функционировать корректно.</string>
+    <string name="dialog_message_permission_overlay">Разрешите наложение поверх других приложений в следующем окне, чтобы позволить Blue Light Filter функционировать корректно.</string>
     <string name="dialog_title_permission_write_settings">Меняю настройки системы</string>
-    <string name="dialog_message_permission_write_settings">Разрешите изменение настроек системы в следующем окне, чтобы позволить Fulldive Eye Filter изменять уровень яркости.</string>
+    <string name="dialog_message_permission_write_settings">Разрешите изменение настроек системы в следующем окне, чтобы позволить Blue Light Filter изменять уровень яркости.</string>
     <string name="notification_status_off">Выкл.</string>
     <string name="notification_action_turn_on">Включить</string>
     <string name="notification_action_turn_off">Выключить</string>
@@ -111,9 +111,8 @@
     <string name="pref_title_use_location">От заката до рассвета</string>
     <string name="pref_summary_use_location">Автоматически</string>
     <string name="pref_title_integration">Совместимость с другими приложениями</string>
-    <string name="pref_summary_integration">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматически выполнять некие задачи, когда происходят определённые события. Fulldive Eye Filter шлёт открытое уведомление при включении и включении, так что такие приложения могут реагировать на него. Если вы не пользуетесь и не разрабатываете подобные приложения, вы можете пропустить следующий абзац.
-\n
-\nFulldive Eye Filter выполняет рассылку действия `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Рассылка также содержит переменную типа boolean с ключом `jmstudios.bundle.key.FILTER_IS_ON`, которая указывает о включении или выключении Fulldive Eye Filter.</string>
+    <string name="pref_summary_integration">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматически выполнять некие задачи, когда происходят определённые события. Blue Light Filter шлёт открытое уведомление при включении и включении, так что такие приложения могут реагировать на него. Если вы не пользуетесь и не разрабатываете подобные приложения, вы можете пропустить следующий абзац.
+</string>
     <string name="pref_title_version">Версия</string>
     <string name="snackbar_location_updated">Местоположение найдено!</string>
     <string name="pref_entry_button_backlight_system">Системный</string>
@@ -134,7 +133,7 @@
     <string name="pref_summary_schedule_none">Нет</string>
     <string name="pref_title_translators">Помочь перевести</string>
     <string name="pref_summary_translators">Переводчики: Anton Shestakov</string>
-    <string name="toast_warning_secured">Некоторые функции этого приложения могут не работать, пока запущено Fulldive Eye Filter.</string>
+    <string name="toast_warning_secured">Некоторые функции этого приложения могут не работать, пока запущено Blue Light Filter.</string>
     <string name="notification_action_whitelist_add">Добавить приложение в привилегированные</string>
     <string name="notification_action_whitelist_remove">Удалить приложение из привилегированных</string>
     <string name="notification_channel_overlay_name">Наложение уведомлений</string>

@@ -68,6 +68,7 @@ var filterIsOn: Boolean = false
         Config.filterIsOn = value
     }
 
+
 fun inActivePeriod(Log: KLog? = null): Boolean {
     val now = Calendar.getInstance()
 

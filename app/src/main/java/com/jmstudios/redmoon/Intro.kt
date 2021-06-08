@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.AppIntroFragment
 
-import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.model.Config
 
 class Intro : AppIntro2() {
@@ -21,7 +20,7 @@ class Intro : AppIntro2() {
 
         addSlide(AppIntroFragment.newInstance(getString(R.string.slide_title_welcome),
                 getString(R.string.slide_text_welcome),
-                R.drawable.intro_slide_1,
+                R.drawable.ic_fulldive_onboarding_1,
                 0xFFD32F2F.toInt()))
 
         addSlide(AppIntroFragment.newInstance(getString(R.string.slide_title_protect_eyes),
@@ -36,7 +35,7 @@ class Intro : AppIntro2() {
 
         addSlide(AppIntroFragment.newInstance(getString(R.string.slide_title_get_started),
                 getString(R.string.slide_text_get_started),
-                R.drawable.intro_slide_4,
+                R.drawable.ic_fulldive_onboarding_4,
                 0xFFFFB300.toInt()))
     }
 

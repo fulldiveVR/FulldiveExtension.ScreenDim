@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fulldive Eye Filter</string>
-    <string name="activity_main">Fulldive Eye Filter</string>
-    <string name="activity_shortcut">Fulldive Eye Filter kapcsoló</string>
+    <string name="app_name">Blue Light Filter</string>
+    <string name="activity_main">Blue Light Filter</string>
+    <string name="activity_shortcut">Blue Light Filter kapcsoló</string>
     <string name="activity_intro">Bevezető</string>
-    <string name="activity_about">A Fulldive Eye Filter névjegye</string>
+    <string name="activity_about">A Blue Light Filter névjegye</string>
     <string name="activity_secure_suspend">Szüneteltetés a figyelmen kívül hagyott appokban</string>
     <string name="activity_schedule">Ütemezés</string>
     <string name="activity_timer">Időzítő</string>
@@ -50,11 +50,11 @@
     <string name="button_remove_filter">Törlés</string>
     <string name="text_switch_on">Bekapcsolva</string>
     <string name="text_switch_off">Kikapcsolva</string>
-    <string name="pref_summary_secure_suspend">Ha ez a funkció be van kapcsolva, a Fulldive Eye Filter automatikusan szünetelni fog, amikor bizonyos alkalmazások meg vannak nyitva. Alapértelmezés szerint ez magában foglalja az olyan alkalmazásokat is, amelyek nem működnek a Fulldive Eye Filter futása alatt*, ilyen például az apk-k telepítése. Az aktuális alkalmazás képernyőjének ezt a viselkedését az értesítésből lehet megváltoztatni. Olyan színérzénkeny alkalmazások esetében lehet érdemes alkalmazni, mint például a kamera.
+    <string name="pref_summary_secure_suspend">Ha ez a funkció be van kapcsolva, a Blue Light Filter automatikusan szünetelni fog, amikor bizonyos alkalmazások meg vannak nyitva. Alapértelmezés szerint ez magában foglalja az olyan alkalmazásokat is, amelyek nem működnek a Blue Light Filter futása alatt*, ilyen például az apk-k telepítése. Az aktuális alkalmazás képernyőjének ezt a viselkedését az értesítésből lehet megváltoztatni. Olyan színérzénkeny alkalmazások esetében lehet érdemes alkalmazni, mint például a kamera.
 \n
 \nEz a funckió kissé csökkentheti az akkumulátor élettartamát.
 \n
-\n*Bizonyos alkalmazások védve vannak az átfedésektől, hogy megvédjék magukat az interferenciáktól, mint például egy nem kívánt alkalmazás telepítése. Nem fognak reagálni az érintésekre, amíg a Fulldive Eye Filter be van kapcsolva, mivel az úgy működik, hogy áttetsző piros réteget rajzol a képernyőre.</string>
+\n*Bizonyos alkalmazások védve vannak az átfedésektől, hogy megvédjék magukat az interferenciáktól, mint például egy nem kívánt alkalmazás telepítése. Nem fognak reagálni az érintésekre, amíg a Blue Light Filter be van kapcsolva, mivel az úgy működik, hogy áttetsző piros réteget rajzol a képernyőre.</string>
     <string name="location_not_set">Hely nincs beállítva</string>
     <string name="latitude_short">Szélesség</string>
     <string name="longitude_short">Hosszúság</string>
@@ -65,31 +65,31 @@
     <string name="pref_title_translators">Segíts a fordításban</string>
     <string name="pref_summary_translators">Fordítók: anonymous, diyre, zoli111</string>
     <string name="pref_title_integration">Integráció más alkalmazásokkal</string>
-    <string name="pref_summary_integration">Néhány alkalmazás, mint például a LibreTasks vagy a Tasker, lehetővé teszik feladatok automatizálását bizonyos események bekövetkeztekor. A Fulldive Eye Filter egy nyilvános értesítést küld amikor be- vagy kikapcsol, így ezek az alkalmazások reagálhatnak. Ha nem használsz vagy fejlesztesz ilyen appokat, akkor figyelmen kívül hagyhatod a következő bekezdést.
+    <string name="pref_summary_integration">Néhány alkalmazás, mint például a LibreTasks vagy a Tasker, lehetővé teszik feladatok automatizálását bizonyos események bekövetkeztekor. A Blue Light Filter egy nyilvános értesítést küld amikor be- vagy kikapcsol, így ezek az alkalmazások reagálhatnak. Ha nem használsz vagy fejlesztesz ilyen appokat, akkor figyelmen kívül hagyhatod a következő bekezdést.
 \n
-\nA Fulldive Eye Filter egy publikus intentet közvetít a `com.jmstudios.redmoon.RED_MOON_TOGGLED` művelettel. Az intent egy boolean extrát tartalmaz a `jmstudios.bundle.key.FILTER_IS_ON` kulccsal, ami jelzi, hogy a Fulldive Eye Filter be- vagy kikapcsol.</string>
-    <string name="toast_warning_install">Nem fogsz tudni apk-kat telepíteni, amíg a Fulldive Eye Filter be van kapcsolva.</string>
-    <string name="toast_warning_secured">Lehetséges, hogy ennek az alkalmazásnak egyes funkciói nem működnek, amíg a Fulldive Eye Filter fut.</string>
+\nA Blue Light Filter egy publikus intentet közvetít a `com.jmstudios.redmoon.RED_MOON_TOGGLED` művelettel. Az intent egy boolean extrát tartalmaz a `jmstudios.bundle.key.FILTER_IS_ON` kulccsal, ami jelzi, hogy a Blue Light Filter be- vagy kikapcsol.</string>
+    <string name="toast_warning_install">Nem fogsz tudni apk-kat telepíteni, amíg a Blue Light Filter be van kapcsolva.</string>
+    <string name="toast_warning_secured">Lehetséges, hogy ennek az alkalmazásnak egyes funkciói nem működnek, amíg a Blue Light Filter fut.</string>
     <string name="snackbar_warning_no_location">A helyzeted frissítéséhez kapcsold be a helyszolgáltatásokat</string>
     <string name="snackbar_searching_location">Hely keresése</string>
     <string name="snackbar_location_updated">Hely megtalálva!</string>
-    <string name="help_snackbar_text">Nyomd meg a kapcsolót a Fulldive Eye Filter bekapcsolásához</string>
+    <string name="help_snackbar_text">Nyomd meg a kapcsolót a Blue Light Filter bekapcsolásához</string>
     <string name="dialog_title_add_filter">Szűrő név megadása</string>
     <string name="edit_hint_add_filter">Szűrő neve</string>
     <string name="dialog_title_remove_filter">Törli ezt a szűrőt\?</string>
     <string name="dialog_title_permission_write_settings">Rendszerbeállítások módosítása</string>
-    <string name="dialog_message_permission_write_settings">A következő ablakban engedélyezd a rendszerbeállítások módosítását, hogy a Fulldive Eye Filter változtathasson a fényerőn.</string>
+    <string name="dialog_message_permission_write_settings">A következő ablakban engedélyezd a rendszerbeállítások módosítását, hogy a Blue Light Filter változtathasson a fényerőn.</string>
     <string name="dialog_title_permission_usage_stats">Használati hozzáférés</string>
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Mégse</string>
     <string name="slide_title_welcome">Üdvözlünk!</string>
-    <string name="slide_text_welcome">Üdvözlünk a Fulldive Eye Filter-ban!</string>
+    <string name="slide_text_welcome">Üdvözlünk a Blue Light Filter-ban!</string>
     <string name="slide_title_protect_eyes">Védjük a szemeid</string>
-    <string name="slide_text_protect_eyes">Éjszaka, amikor a telefon fénye bántja a szemeidet, halványítsd a képernyődet a Fulldive Eye Filter-nal.</string>
+    <string name="slide_text_protect_eyes">Éjszaka, amikor a telefon fénye bántja a szemeidet, halványítsd a képernyődet a Blue Light Filter-nal.</string>
     <string name="slide_title_improve_sleep">Javítunk az alvás minőségén</string>
-    <string name="slide_text_improve_sleep">A kék fény gátolja a Melatonin hormon termelődését, amely segít az elalvásban esténként. A Fulldive Eye Filter használatával a képernyő kevesebb kék fényt bocsát ki, így elősegíti a könnyebb elalvást.</string>
+    <string name="slide_text_improve_sleep">A kék fény gátolja a Melatonin hormon termelődését, amely segít az elalvásban esténként. A Blue Light Filter használatával a képernyő kevesebb kék fényt bocsát ki, így elősegíti a könnyebb elalvást.</string>
     <string name="slide_title_get_started">Kezdjünk hozzá!</string>
-    <string name="slide_text_get_started">Kapcsold be vagy ki a Fulldive Eye Filter-t a jobb felső sarokban található kapcsolóval.</string>
+    <string name="slide_text_get_started">Kapcsold be vagy ki a Blue Light Filter-t a jobb felső sarokban található kapcsolóval.</string>
     <string name="filter_name_custom">Egyéni</string>
     <string name="filter_name_default">Alapértelmezett</string>
     <string name="filter_name_bed_reading">Olvasás</string>

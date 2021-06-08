@@ -1,12 +1,12 @@
-<img alt="Fulldive Eye Filter Icon" align="right" height="256" src="https://lut.im/3IqLwsAZWH/piFLRMOgNLWmiqB8.png">
+<img alt="Blue Light Filter Icon" align="right" height="256" src="https://lut.im/3IqLwsAZWH/piFLRMOgNLWmiqB8.png">
 
-# Fulldive Eye Filter<br/>[![Translation status](https://hosted.weblate.org/widgets/red-moon/-/svg-badge.svg)](https://hosted.weblate.org/engage/red-moon/?utm_source=widget) [![License](https://img.shields.io/badge/license-GPL--3.0%2B-bd0000.svg)](COPYING "License: GPL-3.0-or-later") [![Commits (since latest release)](https://img.shields.io/github/commits-since/LibreShift/red-moon/latest.svg "Commits since latest release")](https://github.com/LibreShift/red-moon/releases/latest)
+# Blue Light Filter<br/>[![Translation status](https://hosted.weblate.org/widgets/red-moon/-/svg-badge.svg)](https://hosted.weblate.org/engage/red-moon/?utm_source=widget) [![License](https://img.shields.io/badge/license-GPL--3.0%2B-bd0000.svg)](COPYING "License: GPL-3.0-or-later") [![Commits (since latest release)](https://img.shields.io/github/commits-since/LibreShift/red-moon/latest.svg "Commits since latest release")](https://github.com/LibreShift/red-moon/releases/latest)
 
-Blue light may suppress the production of melatonin, the sleep hormone. Fulldive Eye Filter
+Blue light may suppress the production of melatonin, the sleep hormone. Blue Light Filter
 filters out blue light and dims your screen below the normal minimum, so you can
 use your phone comfortably at night.
 
-* Schedule Fulldive Eye Filter to run from sunset to sunrise, or at custom times.
+* Schedule Blue Light Filter to run from sunset to sunrise, or at custom times.
 * Use the default color profiles, or set custom color, intensity, and dim levels.
 * Automatically pause in apps secured against overlays, or those you choose.
 * Quickly start, stop, and switch profiles via notification, tile (Android 7.0+), or widget.
@@ -40,7 +40,7 @@ other parts of their life. That's where you come in! You can:
 
 ## Looking for co-maintainers
 
-Fulldive Eye Filter is still maintained, and I have no plans to change that. I would actually like to do more development and get Fulldive Eye Filter feature-complete. However, it is hard for me to get motivated to do that when I'm the only developer (especially when there are [other](https://snowdrift.coop) projects I'm involved in that *do* have others working on them).
+Blue Light Filter is still maintained, and I have no plans to change that. I would actually like to do more development and get Blue Light Filter feature-complete. However, it is hard for me to get motivated to do that when I'm the only developer (especially when there are [other](https://snowdrift.coop) projects I'm involved in that *do* have others working on them).
 
 If you're interested in becoming a co-maintainer, I'm willing to spend time walking you through the code base.
 
@@ -95,7 +95,7 @@ here's a short list of what I've been doing.
       align="right"
       alt="GNU GPLv3 Image">](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
-*Fulldive Eye Filter* is licensed under the [GNU General Public License version 3] or (at your option) any later version by [the contributors]. It is a derivative of *[Shades]* by [Chris Nguyen], used under the [MIT License].
+*Blue Light Filter* is licensed under the [GNU General Public License version 3] or (at your option) any later version by [the contributors]. It is a derivative of *[Shades]* by [Chris Nguyen], used under the [MIT License].
 
 All used artwork is released into the public domain. Some of the icons use cliparts from [openclipart.org], which are all released in the public domain, namely:
 

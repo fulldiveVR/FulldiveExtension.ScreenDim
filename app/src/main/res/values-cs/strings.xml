@@ -23,12 +23,12 @@
  *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 --><resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Fulldive Eye Filter</string>
+    <string name="app_name">Blue Light Filter</string>
     <!-- Activities -->
-    <string name="activity_main">Fulldive Eye Filter</string>
-    <string name="activity_shortcut">Přepínač Fulldive Eye Filter</string>
+    <string name="activity_main">Blue Light Filter</string>
+    <string name="activity_shortcut">Přepínač Blue Light Filter</string>
     <string name="activity_intro">Úvod</string>
-    <string name="activity_about">O Fulldive Eye Filter</string>
+    <string name="activity_about">O Blue Light Filter</string>
     <string name="activity_secure_suspend">Zastavit pro vybrané aplikace</string>
     <string name="activity_schedule">Plán</string>
     <string name="activity_timer">Časovač</string>
@@ -75,7 +75,7 @@
     <string name="pref_title_stop_time">Čas vypnutí</string>
     <string name="pref_title_use_location">V noci</string>
     <string name="pref_summary_use_location">Nastavit podle polohy</string>
-    <string name="pref_summary_secure_suspend">Pokud je tato funkce zapnutá, aplikace Fulldive Eye Filter se automaticky zastaví po otevření určitých aplikací. Ve výchozím nastavení se jedná o aplikace, které nebudou fungovat, když je spuštěn Fulldive Eye Filter*, jako je instalace APK souborů. Toto chování můžete změnit pro aktuální obrazovku aplikace z oznámení. Můžete například přidat aplikace citlivá na barvy, například fotoaparát.\n\nTato funkce může mírně snížit výdrž baterie vašeho zařízení.\n\n* Některé aplikace jsou chráněny před překryvy, aby se zabránilo nechtěné instalaci aplikací, které nechcete. Nebudou reagovat na dotyky, když je Fulldive Eye Filter zapnutý, protože kreslí na obrazovce průhlednou červenou vrstvu.</string>
+    <string name="pref_summary_secure_suspend">Pokud je tato funkce zapnutá, aplikace Blue Light Filter se automaticky zastaví po otevření určitých aplikací. Ve výchozím nastavení se jedná o aplikace, které nebudou fungovat, když je spuštěn Blue Light Filter*, jako je instalace APK souborů. Toto chování můžete změnit pro aktuální obrazovku aplikace z oznámení. Můžete například přidat aplikace citlivá na barvy, například fotoaparát.\n\nTato funkce může mírně snížit výdrž baterie vašeho zařízení.\n\n* Některé aplikace jsou chráněny před překryvy, aby se zabránilo nechtěné instalaci aplikací, které nechcete. Nebudou reagovat na dotyky, když je Blue Light Filter zapnutý, protože kreslí na obrazovce průhlednou červenou vrstvu.</string>
     <!-- Short strings; might be used in multiple places -->
     <string name="button_add_filter">Přidat</string>
     <string name="button_remove_filter">Smazat</string>
@@ -94,41 +94,41 @@
     <!-- Add your name or handle here if you would like credit in the app -->
     <string name="pref_summary_translators">petr.kle.cz</string>
     <string name="pref_title_integration">Propojení s dalšími aplikacemi</string>
-    <string name="pref_summary_integration">Některé aplikace, jako například LibreTasks nebo Tasker, vám umožňují automatizovat úkoly, když nastane určitá událost. Fulldive Eye Filter pošle veřejné upozornění, když se zapne a vypne, takže tyto aplikace mohou reagovat. Pokud nepoužíváte nebo neprogramujete jednu z těchto aplikací, můžete ignorovat další odstavec.\n\nFulldive Eye Filter vysílá veřejný signál s akcí `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Signál obsahuje klíčem `jmstudios.bundle.key.FILTER_IS_ON`, který označuje, zda se Fulldive Eye Filter zapíná nebo vypíná.</string>
+    <string name="pref_summary_integration">Některé aplikace, jako například LibreTasks nebo Tasker, vám umožňují automatizovat úkoly, když nastane určitá událost. Blue Light Filter pošle veřejné upozornění, když se zapne a vypne, takže tyto aplikace mohou reagovat. Pokud nepoužíváte nebo neprogramujete jednu z těchto aplikací, můžete ignorovat další odstavec.\n\nBlue Light Filter vysílá veřejný signál s akcí `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Signál obsahuje klíčem `jmstudios.bundle.key.FILTER_IS_ON`, který označuje, zda se Blue Light Filter zapíná nebo vypíná.</string>
     <!-- Toasts -->
-    <string name="toast_warning_install">Nebudete moci instalovat soubory APK, pokud je aktivní Fulldive Eye Filter.</string>
-    <string name="toast_warning_secured">Některé funkce této aplikace nemusí pracovat při spuštění Fulldive Eye Filter.</string>
+    <string name="toast_warning_install">Nebudete moci instalovat soubory APK, pokud je aktivní Blue Light Filter.</string>
+    <string name="toast_warning_secured">Některé funkce této aplikace nemusí pracovat při spuštění Blue Light Filter.</string>
     <!-- Snackbar -->
     <string name="snackbar_warning_no_location">Povolte GPS pro určení polohy</string>
     <string name="snackbar_searching_location">Vyhledávám polohu</string>
     <string name="snackbar_location_updated">Poloha nalezena!</string>
-    <string name="help_snackbar_text">Stiskněte přepínač pro povolení Fulldive Eye Filter</string>
+    <string name="help_snackbar_text">Stiskněte přepínač pro povolení Blue Light Filter</string>
     <!-- Dialog -->
     <string name="dialog_title_add_filter">Zadejte jméno filtru</string>
     <string name="edit_hint_add_filter">Jméno filtru</string>
     <string name="dialog_title_remove_filter">Smazat tento filtr?</string>
     <string name="dialog_title_permission_overlay">Kreslení přes ostatní aplikace</string>
-    <string name="dialog_message_permission_overlay">Povolte na další obrazovce kreslení přes ostatní aplikace, aby mohl Fulldive Eye Filter filtrovat modré světlo.</string>
+    <string name="dialog_message_permission_overlay">Povolte na další obrazovce kreslení přes ostatní aplikace, aby mohl Blue Light Filter filtrovat modré světlo.</string>
     <string name="dialog_title_permission_write_settings">Upravit nastavení systému</string>
-    <string name="dialog_message_permission_write_settings">Povolte na další obrazovce úpravu nastavení systému, aby mohl Fulldive Eye Filter měnit jas displeje.</string>
+    <string name="dialog_message_permission_write_settings">Povolte na další obrazovce úpravu nastavení systému, aby mohl Blue Light Filter měnit jas displeje.</string>
     <string name="dialog_title_permission_usage_stats">Načtení spuštěných aplikací</string>
-    <string name="dialog_message_permission_usage_stats">Povolte na další obrazovce přístup k načtení spuštěných aplikací, aby se mohl Fulldive Eye Filter automaticky vypínat při spuštění aplikací, které potřebují kreslit přes ostatní aplikace.</string>
+    <string name="dialog_message_permission_usage_stats">Povolte na další obrazovce přístup k načtení spuštěných aplikací, aby se mohl Blue Light Filter automaticky vypínat při spuštění aplikací, které potřebují kreslit přes ostatní aplikace.</string>
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Zrušit</string>
     <!-- Shortcuts -->
-    <string name="shortcut_title_toggle">Přepnout Fulldive Eye Filter</string>
+    <string name="shortcut_title_toggle">Přepnout Blue Light Filter</string>
     <!-- Intro -->
     <string name="slide_title_welcome">Vítejte!</string>
-    <string name="slide_text_welcome">Vítejte v Fulldive Eye Filter!</string>
+    <string name="slide_text_welcome">Vítejte v Blue Light Filter!</string>
     <string name="slide_title_protect_eyes">Chraňte svoje oči</string>
-    <string name="slide_text_protect_eyes">Fulldive Eye Filter v noci sníži jas displeje
+    <string name="slide_text_protect_eyes">Blue Light Filter v noci sníži jas displeje
         a šetří tak Vaše oči.</string>
     <string name="slide_title_improve_sleep">Lepe se vyspíte</string>
     <string name="slide_text_improve_sleep">Modré světlo potlačuje produkci 
-			melatoninu, hormonu, který Vám pomůže usnout v noci. Fulldive Eye Filter odstraňuje
+			melatoninu, hormonu, který Vám pomůže usnout v noci. Blue Light Filter odstraňuje
 			modré světlo z obrazovky, aby jste lépe spali.</string>
     <string name="slide_title_get_started">Začínáme!</string>
-    <string name="slide_text_get_started">Zapněte Fulldive Eye Filter přepínačem v pravém
+    <string name="slide_text_get_started">Zapněte Blue Light Filter přepínačem v pravém
 			horním rohu.</string>
     <!-- Profiles -->
     <string name="filter_name_custom">Uživatelský</string>
@@ -137,7 +137,7 @@
     <string name="filter_name_dim_only">Pouze ztlumení</string>
     <!-- button_backlight_entries -->
     <string name="pref_entry_button_backlight_system">Systém Android</string>
-    <string name="pref_entry_button_backlight_filter_dim_level">Filtr Fulldive Eye Filter</string>
+    <string name="pref_entry_button_backlight_filter_dim_level">Filtr Blue Light Filter</string>
     <string name="pref_entry_button_backlight_turn_off">Vypnuto</string>
     <!-- Currently unused -->
     <string name="action_next_profile">Další profil</string>
