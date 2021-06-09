@@ -1,14 +1,11 @@
 package com.jmstudios.redmoon
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SwitchCompat
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import com.jmstudios.redmoon.appextensions.ExtensionContentProvider
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
@@ -46,7 +43,10 @@ class MainActivity : ThemedAppCompatActivity() {
         }
         showChangelogAuto(this)
 
-        switchView.setOnCheckedChangeListener { _, _ -> Command.toggle() }
+        switchView.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked != filterIsOn) Command.toggle()
+        }
+
         switchView.visibility = View.VISIBLE
         val extras = intent.extras
         if (extras != null) {
