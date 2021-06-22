@@ -15,6 +15,10 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <permission
+        android:name="com.fulldive.extension.eyefilter.access.read"
+        android:protectionLevel="signature" />
+
     <application
         android:name="com.jmstudios.redmoon.RedMoonApplication"
         android:allowBackup="true"
@@ -116,7 +120,8 @@
 
         <provider
             android:name=".appextensions.ExtensionContentProvider"
-            android:authorities="com.fulldive.eyefilter"
-            android:exported="true" />
+            android:authorities="com.fulldive.extension.eyefilter"
+            android:exported="true"
+            android:readPermission="com.fulldive.extension.eyefilter.access.read"/>
     </application>
 </manifest>

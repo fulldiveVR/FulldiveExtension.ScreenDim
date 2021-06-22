@@ -48,6 +48,9 @@ class MainActivity : ThemedAppCompatActivity() {
         }
 
         switchView.visibility = View.VISIBLE
+
+        // Can't toggle from browser without permissions. Need to request it before stealth launch.
+        Permission.Overlay.request(this)
         val extras = intent.extras
         if (extras != null) {
             val workStatus = extras.getString(ExtensionContentProvider.WORK_STATUS)

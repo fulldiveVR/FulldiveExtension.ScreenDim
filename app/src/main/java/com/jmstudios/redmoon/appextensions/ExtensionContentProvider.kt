@@ -2,10 +2,51 @@ package com.jmstudios.redmoon.appextensions
 
 import android.content.ContentProvider
 import android.content.ContentValues
+import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
+import android.os.Bundle
+import android.util.Log
+import androidx.core.os.bundleOf
+import com.jmstudios.redmoon.MainActivity
+import com.jmstudios.redmoon.filter.Command
+import com.jmstudios.redmoon.util.filterIsOn
 
 class ExtensionContentProvider : ContentProvider() {
+
+    override fun call(method: String, arg: String?, extras: Bundle?): Bundle? {
+        Log.d("AppExtensionTest", "call method:$method")
+        return when (method) {
+            WorkType.LAUNCH.toString() -> {
+                filterIsOn = !filterIsOn
+                Command.toggle(filterIsOn)
+                null
+            }
+            WorkType.OPEN.toString() -> {
+                context?.let { context->
+                    val intent = Intent(context, MainActivity::class.java)
+                    context.startActivity(intent)
+                }
+                null
+            }
+            GET_STATUS -> {
+                bundleOf(
+                    Pair(
+                        WORK_STATUS,
+                        if (filterIsOn) {
+                            AppExtensionState.START
+                        } else {
+                            AppExtensionState.STOP
+                        }
+                            .toString()
+                    )
+                )
+            }
+            else -> {
+                super.call(method, arg, extras)
+            }
+        }
+    }
 
     override fun onCreate(): Boolean {
         return true
@@ -36,9 +77,10 @@ class ExtensionContentProvider : ContentProvider() {
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int = 0
 
     companion object {
-        private const val PREFERENCE_AUTHORITY = "com.fulldive.eyefilter"
+        private const val PREFERENCE_AUTHORITY = "com.fulldive.extension.eyefilter"
         const val BASE_URL = "content://$PREFERENCE_AUTHORITY"
         const val WORK_STATUS = "WORK_STATUS"
+        const val GET_STATUS = "GET_STATUS"
     }
 }
 

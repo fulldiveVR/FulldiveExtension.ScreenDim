@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 
 import com.github.paolorotolo.appintro.AppIntro2
 import com.github.paolorotolo.appintro.AppIntroFragment
+import com.jmstudios.redmoon.filter.Command
 
 import com.jmstudios.redmoon.model.Config
 
