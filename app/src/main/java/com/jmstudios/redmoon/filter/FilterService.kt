@@ -170,7 +170,7 @@ class FilterService : JobService() {
             channel
         )
         val builder = NotificationCompat.Builder(baseContext, NOTIFICATION_TAG)
-            .setContentText("Blue Light Filter")
+            .setContentText("Full Blue Light Filter")
             .setSmallIcon(R.mipmap.ic_launcher_round)
 
         val notification = builder.build()

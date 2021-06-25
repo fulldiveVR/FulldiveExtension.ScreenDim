@@ -26,6 +26,7 @@ package com.jmstudios.redmoon.util
 
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -63,8 +64,9 @@ var filterIsOn: Boolean = false
         } else {
             AppExtensionState.STOP
         }
-        val uri: Uri = getContentUri(appExtensionState.toString())
+        val uri: Uri = getContentUri(appExtensionState.id)
         appContext.contentResolver.insert(uri, null)
+        Log.d("AppExtensionTest", "filterIsOn $uri ${appExtensionState.id}")
         Config.filterIsOn = value
     }
 

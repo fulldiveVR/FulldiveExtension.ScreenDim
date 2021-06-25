@@ -6,7 +6,6 @@ import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.core.os.bundleOf
 import com.jmstudios.redmoon.MainActivity
 import com.jmstudios.redmoon.filter.Command
@@ -15,15 +14,21 @@ import com.jmstudios.redmoon.util.filterIsOn
 class ExtensionContentProvider : ContentProvider() {
 
     override fun call(method: String, arg: String?, extras: Bundle?): Bundle? {
-        Log.d("AppExtensionTest", "call method:$method")
         return when (method) {
-            WorkType.LAUNCH.toString() -> {
-                filterIsOn = !filterIsOn
-                Command.toggle(filterIsOn)
+            WorkType.START.id -> {
+                if (!filterIsOn) {
+                    toggleFilter()
+                }
                 null
             }
-            WorkType.OPEN.toString() -> {
-                context?.let { context->
+            WorkType.STOP.id -> {
+                if (filterIsOn) {
+                    toggleFilter()
+                }
+                null
+            }
+            WorkType.OPEN.id -> {
+                context?.let { context ->
                     val intent = Intent(context, MainActivity::class.java)
                     context.startActivity(intent)
                 }
@@ -38,7 +43,7 @@ class ExtensionContentProvider : ContentProvider() {
                         } else {
                             AppExtensionState.STOP
                         }
-                            .toString()
+                            .id
                     )
                 )
             }
@@ -76,10 +81,16 @@ class ExtensionContentProvider : ContentProvider() {
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int = 0
 
+    private fun toggleFilter() {
+        filterIsOn = !filterIsOn
+        Command.toggle(filterIsOn)
+    }
+
     companion object {
-        private const val PREFERENCE_AUTHORITY = "com.fulldive.extension.eyefilter"
+        private const val PREFERENCE_AUTHORITY =
+            "com.fulldive.extension.eyefilter.FulldiveContentProvider"
         const val BASE_URL = "content://$PREFERENCE_AUTHORITY"
-        const val WORK_STATUS = "WORK_STATUS"
+        const val WORK_STATUS = "work_status"
         const val GET_STATUS = "GET_STATUS"
     }
 }

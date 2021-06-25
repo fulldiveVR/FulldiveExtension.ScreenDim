@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources><string name="app_name">Blue Light Filter</string>
 
-    <string name="activity_main">Blue Light Filter</string>
-    <string name="activity_shortcut">Перемикач Blue Light Filter</string>
+    <string name="activity_main">Full Blue Light Filter</string>
+    <string name="activity_shortcut">Перемикач Full Blue Light Filter</string>
     <string name="activity_intro">Вступ</string>
-    <string name="activity_about">Про Blue Light Filter</string>
+    <string name="activity_about">Про Full Blue Light Filter</string>
     <string name="activity_secure_suspend">Пауза в виключених застосунках</string>
     <string name="activity_timer">Таймер</string>
 
@@ -42,11 +42,11 @@
     <string name="pref_title_use_location">Від заходу до світанку</string>
     <string name="pref_summary_use_location">Виходячи з вашого місцезнаходження</string>
 
-    <string name="pref_summary_secure_suspend">"Коли ця функція включена, Blue Light Filter автоматично призупиняється, коли певні застосунки відкриті. За замовчуванням це включає застосунки, які не працюватимуть під час роботи функції Blue Light Filter *, такі як встановлення apks. Ви можете змінити цю поведінку для поточного застосунку на панелі сповіщень.  Наприклад, ви можете додати світлочутливі застосунки, такі як камеру.
+    <string name="pref_summary_secure_suspend">"Коли ця функція включена, Full Blue Light Filter автоматично призупиняється, коли певні застосунки відкриті. За замовчуванням це включає застосунки, які не працюватимуть під час роботи функції Full Blue Light Filter *, такі як встановлення apks. Ви можете змінити цю поведінку для поточного застосунку на панелі сповіщень.  Наприклад, ви можете додати світлочутливі застосунки, такі як камеру.
 \n
 \nЦя функція може трохи знизити термін служби батареї вашого пристрою.
 \n
-\n*Деякі застосунки захищені від накладень, щоб захистити себе від втручання, як обман у встановленні застосунку, який ви не хочете. Вони не будуть реагувати на контакт, коли Blue Light Filter увімкнуто, оскільки це працює, малюючи прозорий червоний шар поверх екрану."</string>
+\n*Деякі застосунки захищені від накладень, щоб захистити себе від втручання, як обман у встановленні застосунку, який ви не хочете. Вони не будуть реагувати на контакт, коли Full Blue Light Filter увімкнуто, оскільки це працює, малюючи прозорий червоний шар поверх екрану."</string>
 
     <string name="button_add_filter">Додати</string>
     <string name="button_remove_filter">Видалити</string>
@@ -67,48 +67,48 @@
     <string name="pref_summary_email_developer">Другий спосіб зв\'язатися з нами</string>
 
     <string name="pref_title_integration">Інтеграція з іншими додатками</string>
-    <string name="pref_summary_integration">Деякі програми, як-от LibreTasks або Tasker, дозволяють автоматизувати завдання, коли відбуваються певні події. Blue Light Filter надсилає загальнодоступне сповіщення, коли він включається та вимикається, тому ці програми можуть відповісти.
+    <string name="pref_summary_integration">Деякі програми, як-от LibreTasks або Tasker, дозволяють автоматизувати завдання, коли відбуваються певні події. Full Blue Light Filter надсилає загальнодоступне сповіщення, коли він включається та вимикається, тому ці програми можуть відповісти.
 \n
-\nBlue Light Filter виконує розсилку дії `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Розсилка також містить змінну типу boolean з ключем `jmstudios.bundle.key.FILTER_IS_ON`, яка вказує про включення або виключенні Blue Light Filter.</string>
+\nFull Blue Light Filter виконує розсилку дії `com.jmstudios.redmoon.RED_MOON_TOGGLED`. Розсилка також містить змінну типу boolean з ключем `jmstudios.bundle.key.FILTER_IS_ON`, яка вказує про включення або виключенні Full Blue Light Filter.</string>
 
-    <string name="toast_warning_install">Ви не зможете встановлювати застосунки, поки Blue Light Filter увімкнений.</string>
+    <string name="toast_warning_install">Ви не зможете встановлювати застосунки, поки Full Blue Light Filter увімкнений.</string>
 
     <string name="snackbar_warning_no_location">Увімкнути служби локації для оновлення місцезнаходження</string>
     <string name="snackbar_searching_location">Пошук місця розташування</string>
     <string name="snackbar_location_updated">Знайдено місцезнаходження!</string>
-    <string name="help_snackbar_text">Натисніть перемикач, щоб увімкнути Blue Light Filter</string>
+    <string name="help_snackbar_text">Натисніть перемикач, щоб увімкнути Full Blue Light Filter</string>
 
     <string name="dialog_title_add_filter">Введіть назву фільтра</string>
     <string name="edit_hint_add_filter">Назва фільтру</string>
     <string name="dialog_title_remove_filter">Видалити цей фільтр?</string>
 
     <string name="dialog_title_permission_overlay">Поверх інших застосунків</string>
-    <string name="dialog_message_permission_overlay">Дозволити накладення поверх інших застосунків на наступному екрані, щоб дозволити ввімкнути Blue Light Filter.</string>
+    <string name="dialog_message_permission_overlay">Дозволити накладення поверх інших застосунків на наступному екрані, щоб дозволити ввімкнути Full Blue Light Filter.</string>
 
     <string name="dialog_title_permission_write_settings">Змінити налаштування системи</string>
-    <string name="dialog_message_permission_write_settings">Дозволити модифікацію параметрів системи на наступному екрані, щоб дозволити Blue Light Filter змінити рівень яскравості.</string>
+    <string name="dialog_message_permission_write_settings">Дозволити модифікацію параметрів системи на наступному екрані, щоб дозволити Full Blue Light Filter змінити рівень яскравості.</string>
 
     <string name="dialog_title_permission_usage_stats">Використання доступу</string>
-    <string name="dialog_message_permission_usage_stats">Дозволити використання доступу на наступному екрані, щоб дозволити Blue Light Filter призупинити роботу захищених застосунків.
+    <string name="dialog_message_permission_usage_stats">Дозволити використання доступу на наступному екрані, щоб дозволити Full Blue Light Filter призупинити роботу захищених застосунків.
 \n
-\nBlue Light Filter буде використовувати ці дані лише для того, щоб визначити, чи використовуєте ви програму, яка не працюватиме, коли увімкнено Blue Light Filter.</string>
+\nFull Blue Light Filter буде використовувати ці дані лише для того, щоб визначити, чи використовуєте ви програму, яка не працюватиме, коли увімкнено Full Blue Light Filter.</string>
 
     <string name="dialog_button_ok">OK</string>
     <string name="dialog_button_cancel">Скасувати</string>
 
-    <string name="shortcut_title_toggle">Вкл/Викл Blue Light Filter</string>
+    <string name="shortcut_title_toggle">Вкл/Викл Full Blue Light Filter</string>
 
     <string name="slide_title_welcome">Ласкаво просимо!</string>
-    <string name="slide_text_welcome">Ласкаво просимо до Blue Light Filter!</string>
+    <string name="slide_text_welcome">Ласкаво просимо до Full Blue Light Filter!</string>
 
     <string name="slide_title_protect_eyes">Захист ваших очей</string>
-    <string name="slide_text_protect_eyes">Вночі, коли екран вашого телефону ріже вам очі, ви можете використовувати Blue Light Filter, щоб затемнити екран.</string>
+    <string name="slide_text_protect_eyes">Вночі, коли екран вашого телефону ріже вам очі, ви можете використовувати Full Blue Light Filter, щоб затемнити екран.</string>
 
     <string name="slide_title_improve_sleep">Покращення сну</string>
-    <string name="slide_text_improve_sleep">Синє світло пригнічує вироблення мелатоніну, гормону, який допомагає вам заснути вночі. Blue Light Filter видаляє синє світло з екрана, що дозволяє вам легко заснути.</string>
+    <string name="slide_text_improve_sleep">Синє світло пригнічує вироблення мелатоніну, гормону, який допомагає вам заснути вночі. Full Blue Light Filter видаляє синє світло з екрана, що дозволяє вам легко заснути.</string>
 
     <string name="slide_title_get_started">Почати!</string>
-    <string name="slide_text_get_started">Вмикайте і вимикайте Blue Light Filter за допомогою перемикача у верхньому правому куті.</string>
+    <string name="slide_text_get_started">Вмикайте і вимикайте Full Blue Light Filter за допомогою перемикача у верхньому правому куті.</string>
 
     <string name="filter_name_custom">Користувацький</string>
     <string name="filter_name_default">За замовчуванням</string>
@@ -146,7 +146,7 @@
     <string name="pref_title_translators">Допоможіть перекласти</string>
     <string name="pref_summary_translators">Перекладач: Володимир Бриняк</string>
 
-    <string name="toast_warning_secured">Деякі функції цього застосунку можуть не працювати під час роботи Blue Light Filter.</string>
+    <string name="toast_warning_secured">Деякі функції цього застосунку можуть не працювати під час роботи Full Blue Light Filter.</string>
 
     <string name="notification_action_whitelist_add">Виключити застосунок</string>
     <string name="notification_action_whitelist_remove">Фільтр застосунку</string>

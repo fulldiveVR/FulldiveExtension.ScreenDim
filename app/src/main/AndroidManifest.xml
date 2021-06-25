@@ -120,8 +120,8 @@
 
         <provider
             android:name=".appextensions.ExtensionContentProvider"
-            android:authorities="com.fulldive.extension.eyefilter"
+            android:authorities="com.fulldive.extension.eyefilter.FulldiveContentProvider"
             android:exported="true"
-            android:readPermission="com.fulldive.extension.eyefilter.access.read"/>
+            android:permission="com.fulldive.extension.eyefilter.access.read"/>
     </application>
 </manifest>
