@@ -1,148 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!-- App Name and Activity Labels -->
-    <string name="app_name">Full Blue Light Filter</string>
-    <string name="activity_main">Full Blue Light Filter</string>
-    <string name="activity_shortcut">Переключатель Full Blue Light Filter</string>
-    <!-- Notification -->
-    <string name="notification_status_paused">Приостановлено</string>
-    <!-- Preference -->
-    <string name="pref_category_filter">Фильтр</string>
-    <string name="activity_timer">Время фильтра</string>
-    <string name="pref_title_time_toggle">Время фильтра</string>
-    <string name="pref_title_startup">Запуск</string>
-    <string name="pref_category_other">Другое</string>
-    <string name="button_add_filter">Добавить</string>
-    <string name="button_remove_filter">Удалить</string>
-    <string name="pref_title_dim_level">Уровень затемнения</string>
-    <string name="pref_title_intensity">Прозрачность</string>
-    <string name="pref_title_color_temp">Цвет</string>
-    <string name="pref_title_lower_brightness">Снижать яркость в системных настройках</string>
-    <string name="time_toggle_title">Режим переключения</string>
-    <string name="pref_title_turn_on">Включить в</string>
-    <string name="pref_title_turn_off">Приостановить в</string>
-    <string name="pref_title_start_time">Время начала</string>
-    <string name="pref_title_stop_time">Время остановки</string>
-    <string name="pref_title_location">Местоположение</string>
-    <string name="location_not_set">Местоположение не указано</string>
-    <string name="latitude_short">Широта</string>
-    <string name="longitude_short">Долгота</string>
-    <string name="snackbar_searching_location">Поиск местоположения</string>
-    <string name="menu_dark_theme">Тёмная тема</string>
-    <string name="pref_title_email_developer">Написать разработчикам</string>
-    <string name="pref_summary_email_developer">Дополнительный способ связаться с нами</string>
-    <string name="pref_title_project_page">Посетить страницу проекта</string>
-    <string name="pref_summary_project_page">Увидеть подробную информацию, оставить отзыв и помочь с проектом</string>
-    <!-- Toasts -->
-    <string name="toast_warning_install">Вы не сможете устанавливать приложения, пока Full Blue Light Filter включено.</string>
-    <string name="snackbar_warning_no_location">Включите службу определения местоположения для обновления местоположения</string>
-    <!-- Snackbar -->
-    <string name="help_snackbar_text">Нажмите на переключатель, чтобы включить Full Blue Light Filter</string>
-    <!-- Dialog -->
-    <string name="dialog_title_add_filter">Введите название профиля</string>
-    <string name="edit_hint_add_filter">Названия профиля</string>
-    <string name="dialog_title_remove_filter">Удалить этот профиль?</string>
-    <string name="dialog_button_ok">OK</string>
-    <string name="dialog_button_cancel">Отмена</string>
-    <!-- Shortcuts -->
-    <string name="shortcut_title_toggle">Вкл/Выкл Full Blue Light Filter</string>
-    <!-- Profiles -->
-    <!-- standard_profiles_array -->
-    <string name="filter_name_custom">Свой</string>
-    <string name="filter_name_default">По умолчанию</string>
-    <string name="filter_name_bed_reading">Чтение</string>
-    <!-- Time Toggle -->
-    <!-- time_toggle_options_array -->
-    <string name="time_toggle_options_array_0">Вручную</string>
-    <string name="time_toggle_options_array_1">Автоматически (по солнцу)</string>
-    <string name="time_toggle_options_array_2">Автоматически (по времени)</string>
-    <string name="activity_intro">Введение</string>
-    <string name="menu_show_intro">Повторить введение</string>
-    <string name="notification_action_pause">Приостановить</string>
-    <string name="notification_action_resume">Продолжить</string>
-    <string name="activity_secure_suspend">Приостанавливать в привилегированных приложениях</string>
-    <string name="pref_title_secure_suspend">Приостанавливать в привилегированных приложениях</string>
-    <string name="pref_summary_secure_suspend">Некоторые функции могут не работать, когда приложение Full Blue Light Filter запущено*. Например, установка APK-файлов, предоставление разрешений приложениям или использование приложения SuperUser (на рутованных устройствах).
-\n 
-\nЕсли эта настройка включена, Full Blue Light Filter приостановит свою работу, когда одна из таких функций будет запущена.
-\n 
-\nЭта настройка слегка снижает продолжительность работы устройства от аккумулятора. 
-\n 
-\n*Full Blue Light Filter создаёт прозрачный слой красного цвета поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
-    <string name="text_switch_on">Вкл</string>
-    <string name="text_switch_off">Выкл</string>
-    <string name="dialog_message_permission_usage_stats">Разрешите Full Blue Light Filter доступ к просмотру запущенных приложений в следующем окне, чтобы включить эту функцию.
-\n
-\nFull Blue Light Filter будет использовать эти данные только чтобы определять, является ли запущенное приложение привилегированным.</string>
-    <string name="slide_title_welcome">Добро пожаловать!</string>
-    <string name="slide_text_welcome">Добро пожаловать в Full Blue Light Filter!</string>
-    <string name="slide_title_protect_eyes">Защита глаз</string>
-    <string name="slide_text_protect_eyes">Ночью, когда экран вашего телефона
-режет вам глаза, вы можете использовать Full Blue Light Filter, чтобы затемнить экран.</string>
-    <string name="slide_title_improve_sleep">Улучшение сна</string>
-    <string name="slide_text_improve_sleep">Синий свет подавляет
-\nпроизводство мелатонина — гормона, который помогает людям
-\nзаснуть ночью. Full Blue Light Filter убирает синий цвет с вашего экрана,
-\nчтобы вы могли засыпать с лёгкостью.</string>
-    <string name="slide_title_get_started">Начать!</string>
-    <string name="slide_text_get_started">Включайте и выключайте Full Blue Light Filter нажатием на кнопку
-в правом верхнем углу.</string>
-    <string name="dialog_title_permission_usage_stats">Разрешить доступ к запущенным приложениям</string>
-    <!-- Currently unused -->
-    <string name="add_new_profile_dialog_title">Введите названия профиля</string>
-    <string name="add_new_profile_edit_hint">Названия профиля</string>
-    <string name="remove_profile_dialog_title">Удалить этот профиль?</string>
-    <string name="pref_title_appearance">Профиль</string>
-    <string name="searching_location">Поиск местоположения</string>
-    <string name="toast_warning_no_location">Включите службу автоматического определения местоположения</string>
-    <string name="menu_about">О приложении</string>
-    <string name="activity_about">О Full Blue Light Filter</string>
-    <string name="dialog_title_permission_overlay">Поверх других приложений</string>
-    <string name="dialog_message_permission_overlay">Разрешите наложение поверх других приложений в следующем окне, чтобы позволить Full Blue Light Filter функционировать корректно.</string>
-    <string name="dialog_title_permission_write_settings">Меняю настройки системы</string>
-    <string name="dialog_message_permission_write_settings">Разрешите изменение настроек системы в следующем окне, чтобы позволить Full Blue Light Filter изменять уровень яркости.</string>
-    <string name="notification_status_off">Выкл.</string>
-    <string name="notification_action_turn_on">Включить</string>
-    <string name="notification_action_turn_off">Выключить</string>
-    <string name="notification_action_stop">Выключить</string>
-    <string name="notification_action_next_filter">Следующий фильтр</string>
-    <string name="pref_category_button_backlight_disclaimer">Не работает на некоторых устройствах</string>
-    <string name="pref_title_button_backlight">Подсветка аппаратных кнопок</string>
-    <string name="pref_title_use_location">От заката до рассвета</string>
-    <string name="pref_summary_use_location">Автоматически</string>
-    <string name="pref_title_integration">Совместимость с другими приложениями</string>
-    <string name="pref_summary_integration">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматически выполнять некие задачи, когда происходят определённые события. Full Blue Light Filter шлёт открытое уведомление при включении и включении, так что такие приложения могут реагировать на него.
-</string>
-    <string name="pref_title_version">Версия</string>
-    <string name="snackbar_location_updated">Местоположение найдено!</string>
-    <string name="pref_entry_button_backlight_system">Системный</string>
-    <string name="pref_entry_button_backlight_filter_dim_level">По фильтру затемнения</string>
-    <string name="pref_entry_button_backlight_turn_off">Выключить</string>
-    <string name="action_next_profile">Следующий профиль</string>
-    <string name="set_dialog">Настроить</string>
-    <string name="notification_status_running">Запущено. Остановите перед установкой новых приложений</string>
-    <string name="notification_status_running_no_warning">Запущено</string>
-    <string name="menu_restore_default_filters">Восстановить фильтры по умолчанию</string>
-    <string name="filter_name_dim_only">Только затемнение</string>
-    <string name="activity_schedule">Расписание</string>
-    <string name="notification_status_paused_with_info">Приостановлено. Смахните уведомление, чтобы остановить.</string>
-    <string name="pref_category_schedule">Расписание</string>
-    <string name="pref_title_schedule">Запускать по расписанию</string>
-    <string name="pref_summary_schedule_sun" formatted="false">От заката (%on) до рассвета (%off)</string>
-    <string name="pref_summary_schedule_custom" formatted="false">Особое (от %on до %off)</string>
-    <string name="pref_summary_schedule_none">Нет</string>
-    <string name="pref_title_translators">Помочь перевести</string>
-    <string name="pref_summary_translators">Переводчики: Anton Shestakov</string>
-    <string name="toast_warning_secured">Некоторые функции этого приложения могут не работать, пока запущено Full Blue Light Filter.</string>
-    <string name="notification_action_whitelist_add">Добавить приложение в привилегированные</string>
-    <string name="notification_action_whitelist_remove">Удалить приложение из привилегированных</string>
-    <string name="notification_channel_overlay_name">Наложение уведомлений</string>
-    <string name="notification_channel_overlay_description">Постоянные уведомления о наложении</string>
-    <string name="pref_title_dark_theme">Тёмная тема</string>
-    <string name="pref_summary_stop_time_sunrise">Восход (%s)</string>
-    <string name="pref_value_stop_time_sunrise">Восход</string>
-    <string name="pref_summary_start_time_sunset">Закат (%s)</string>
-    <string name="pref_value_start_time_sunset">Закат</string>
-    <string name="menu_settings">Настройки</string>
-    <string name="activity_settings">Настройки</string>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	AUTO-GENERATED FILE. DO NOT MODIFY!
+	This file was automatically generated by localization script.
+	It should not be modified by hand.
+-->
+<resources>
+  <string name="app_name">Full Blue Light Filter</string>
+  <string name="activity_main">Full Blue Light Filter</string>
+  <string name="activity_shortcut">Переключатель Full Blue Light Filter</string>
+  <string name="activity_intro">Приостановлено</string>
+  <string name="activity_settings">Фильтр</string>
+  <string name="activity_about">Время фильтра</string>
+  <string name="activity_secure_suspend">Время фильтра</string>
+  <string name="activity_schedule">Запуск</string>
+  <string name="activity_timer">Другое</string>
+  <string name="menu_restore_default_filters">Добавить</string>
+  <string name="menu_show_intro">Удалить</string>
+  <string name="menu_settings">Уровень затемнения</string>
+  <string name="menu_about">Прозрачность</string>
+  <string name="notification_status_running">Цвет</string>
+  <string name="notification_status_running_no_warning">Снижать яркость в системных настройках</string>
+  <string name="notification_status_paused">Режим переключения</string>
+  <string name="notification_status_paused_with_info">Включить в</string>
+  <string name="notification_status_off">Приостановить в</string>
+  <string name="notification_action_resume">Время начала</string>
+  <string name="notification_action_pause">Время остановки</string>
+  <string name="notification_action_turn_on">Местоположение</string>
+  <string name="notification_action_turn_off">Местоположение не указано</string>
+  <string name="notification_action_stop">Широта</string>
+  <string name="notification_action_whitelist_add">Долгота</string>
+  <string name="notification_action_whitelist_remove">Поиск местоположения</string>
+  <string name="notification_action_next_filter">Тёмная тема</string>
+  <string name="pref_category_filter">Написать разработчикам</string>
+  <string name="pref_category_other">Дополнительный способ связаться с нами</string>
+  <string name="pref_category_button_backlight_disclaimer">Посетить страницу проекта</string>
+  <string name="pref_category_schedule">Увидеть подробную информацию, оставить отзыв и помочь с проектом</string>
+  <string name="pref_title_dim_level">Вы не сможете устанавливать приложения, пока Full Blue Light Filter включено.</string>
+  <string name="pref_title_intensity">Включите службу определения местоположения для обновления местоположения</string>
+  <string name="pref_title_color_temp">Нажмите на переключатель, чтобы включить Full Blue Light Filter</string>
+  <string name="pref_title_lower_brightness">Введите название профиля</string>
+  <string name="pref_title_time_toggle">Названия профиля</string>
+  <string name="pref_title_schedule">Удалить этот профиль?</string>
+  <string name="pref_summary_schedule_sun">OK</string>
+  <string name="pref_summary_schedule_custom">Отмена</string>
+  <string name="pref_summary_schedule_none">Вкл/Выкл Full Blue Light Filter</string>
+  <string name="pref_title_secure_suspend">Свой</string>
+  <string name="pref_title_button_backlight">По умолчанию</string>
+  <string name="pref_title_start_time">Чтение</string>
+  <string name="pref_value_start_time_sunset">Вручную</string>
+  <string name="pref_summary_start_time_sunset">Автоматически (по солнцу)</string>
+  <string name="pref_title_stop_time">Автоматически (по времени)</string>
+  <string name="pref_value_stop_time_sunrise">Введение</string>
+  <string name="pref_summary_stop_time_sunrise">Повторить введение</string>
+  <string name="pref_title_use_location">Приостановить</string>
+  <string name="pref_summary_use_location">Продолжить</string>
+  <string name="pref_title_location">Приостанавливать в привилегированных приложениях</string>
+  <string name="pref_title_dark_theme">Приостанавливать в привилегированных приложениях</string>
+  <string name="pref_summary_secure_suspend">Некоторые функции могут не работать, когда приложение Full Blue Light Filter запущено*. Например, установка APK-файлов, предоставление разрешений приложениям или использование приложения SuperUser (на рутованных устройствах). \n  \nЕсли эта настройка включена, Full Blue Light Filter приостановит свою работу, когда одна из таких функций будет запущена. \n  \nЭта настройка слегка снижает продолжительность работы устройства от аккумулятора.  \n  \n*Full Blue Light Filter создаёт прозрачный слой красного цвета поверх всего экрана; подобные приложения не могут работать, если другие приложения размещаются поверх них. Это сделано для того, чтобы избежать несанкционированного выбора нежелаемых действий, или перехвата прикосновений с целью слежки за пользователем.</string>
+  <string name="button_add_filter">Вкл</string>
+  <string name="button_remove_filter">Выкл</string>
+  <string name="text_switch_on">Разрешите Full Blue Light Filter доступ к просмотру запущенных приложений в следующем окне, чтобы включить эту функцию. \n \nFull Blue Light Filter будет использовать эти данные только чтобы определять, является ли запущенное приложение привилегированным.</string>
+  <string name="text_switch_off">Добро пожаловать!</string>
+  <string name="location_not_set">Добро пожаловать в Full Blue Light Filter!</string>
+  <string name="latitude_short">Защита глаз</string>
+  <string name="longitude_short">Ночью, когда экран вашего телефона режет вам глаза, вы можете использовать Full Blue Light Filter, чтобы затемнить экран.</string>
+  <string name="pref_title_version">Улучшение сна</string>
+  <string name="pref_title_project_page">Синий свет подавляет \nпроизводство мелатонина — гормона, который помогает людям \nзаснуть ночью. Full Blue Light Filter убирает синий цвет с вашего экрана, \nчтобы вы могли засыпать с лёгкостью.</string>
+  <string name="pref_summary_project_page">Начать!</string>
+  <string name="pref_title_email_developer">Включайте и выключайте Full Blue Light Filter нажатием на кнопку в правом верхнем углу.</string>
+  <string name="pref_summary_email_developer">Разрешить доступ к запущенным приложениям</string>
+  <string name="pref_title_translators">Введите названия профиля</string>
+  <string name="pref_summary_translators">Названия профиля</string>
+  <string name="pref_title_integration">Удалить этот профиль?</string>
+  <string name="pref_summary_integration">Профиль</string>
+  <string name="toast_warning_install">Поиск местоположения</string>
+  <string name="toast_warning_secured">Включите службу автоматического определения местоположения</string>
+  <string name="snackbar_warning_no_location">О приложении</string>
+  <string name="snackbar_searching_location">О Full Blue Light Filter</string>
+  <string name="snackbar_location_updated">Поверх других приложений</string>
+  <string name="help_snackbar_text">Разрешите наложение поверх других приложений в следующем окне, чтобы позволить Full Blue Light Filter функционировать корректно.</string>
+  <string name="dialog_title_add_filter">Меняю настройки системы</string>
+  <string name="edit_hint_add_filter">Разрешите изменение настроек системы в следующем окне, чтобы позволить Full Blue Light Filter изменять уровень яркости.</string>
+  <string name="dialog_title_remove_filter">Выкл.</string>
+  <string name="dialog_title_permission_overlay">Включить</string>
+  <string name="dialog_message_permission_overlay">Выключить</string>
+  <string name="dialog_title_permission_write_settings">Выключить</string>
+  <string name="dialog_message_permission_write_settings">Следующий фильтр</string>
+  <string name="dialog_title_permission_usage_stats">Не работает на некоторых устройствах</string>
+  <string name="dialog_message_permission_usage_stats">Подсветка аппаратных кнопок</string>
+  <string name="dialog_button_ok">От заката до рассвета</string>
+  <string name="dialog_button_cancel">Автоматически</string>
+  <string name="shortcut_title_toggle">Совместимость с другими приложениями</string>
+  <string name="slide_title_welcome">Некоторые приложения, вроде LibreTasks или Tasker, позволяют автоматически выполнять некие задачи, когда происходят определённые события. Full Blue Light Filter шлёт открытое уведомление при включении и включении, так что такие приложения могут реагировать на него.</string>
+  <string name="slide_text_welcome">Версия</string>
+  <string name="slide_title_protect_eyes">Местоположение найдено!</string>
+  <string name="slide_text_protect_eyes">Системный</string>
+  <string name="slide_title_improve_sleep">По фильтру затемнения</string>
+  <string name="slide_text_improve_sleep">Выключить</string>
+  <string name="slide_title_get_started">Следующий профиль</string>
+  <string name="slide_text_get_started">Настроить</string>
+  <string name="filter_name_custom">Запущено. Остановите перед установкой новых приложений</string>
+  <string name="filter_name_default">Запущено</string>
+  <string name="filter_name_bed_reading">Восстановить фильтры по умолчанию</string>
+  <string name="filter_name_dim_only">Только затемнение</string>
+  <string name="pref_entry_button_backlight_system">Расписание</string>
+  <string name="pref_entry_button_backlight_filter_dim_level">Приостановлено. Смахните уведомление, чтобы остановить.</string>
+  <string name="pref_entry_button_backlight_turn_off">Расписание</string>
+  <string name="action_next_profile">Запускать по расписанию</string>
+  <string name="add_new_profile_dialog_title">От заката (%on) до рассвета (%off)</string>
+  <string name="add_new_profile_edit_hint">Особое (от %on до %off)</string>
+  <string name="remove_profile_dialog_title">Нет</string>
+  <string name="pref_title_appearance">Помочь перевести</string>
+  <string name="searching_location">Переводчики: Anton Shestakov</string>
+  <string name="toast_warning_no_location">Некоторые функции этого приложения могут не работать, пока запущено Full Blue Light Filter.</string>
+  <string name="set_dialog">Добавить приложение в привилегированные</string>
+  <string name="time_toggle_title">Удалить приложение из привилегированных</string>
+  <string name="pref_title_startup">Наложение уведомлений</string>
+  <string name="menu_dark_theme">Постоянные уведомления о наложении</string>
+  <string name="pref_title_turn_on">Тёмная тема</string>
+  <string name="pref_title_turn_off">Восход (%s)</string>
+  <string name="time_toggle_options_array_0">Восход</string>
+  <string name="time_toggle_options_array_1">Закат (%s)</string>
+  <string name="time_toggle_options_array_2">Закат</string>
+  <string name="notification_channel_overlay_name">Настройки</string>
+  <string name="notification_channel_overlay_description">Настройки</string>
 </resources>
