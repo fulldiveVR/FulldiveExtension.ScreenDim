@@ -53,7 +53,7 @@ class MainActivity : ThemedAppCompatActivity() {
         Permission.Overlay.request(this)
         val extras = intent.extras
         if (extras != null) {
-            val workStatus = extras.getString(ExtensionContentProvider.WORK_STATUS)
+            val workStatus = extras.getString(ExtensionContentProvider.KEY_WORK_STATUS)
             if (workStatus != null) {
                 Command.toggle()
             }

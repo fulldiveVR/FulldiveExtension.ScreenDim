@@ -1,13 +1,15 @@
 package com.jmstudios.redmoon.appextensions
 
 sealed class AppExtensionState(val id: String) {
-    object START: AppExtensionState("START")
-    object STOP: AppExtensionState("STOP")
-    object FAILURE: AppExtensionState("FAILURE")
+    object START: AppExtensionState("start")
+    object STOP: AppExtensionState("stop")
+    object FAILURE: AppExtensionState("failure")
 }
 
 sealed class WorkType(val id: String) {
-    object START: WorkType("START")
-    object STOP: WorkType("STOP")
-    object OPEN: WorkType("OPEN")
+    object START: WorkType("start")
+    object STOP: WorkType("stop")
+    object OPEN: WorkType("open")
+    object GetPermissionsRequired : WorkType("get_permissions_required")
+    object GetStatus : WorkType("get_status")
 }
