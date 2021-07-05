@@ -1,4 +1,4 @@
-Eventually, this TimePreference library will be broken out of Red Moon. When that happens, this readme will become the main readme for that repo. I'm writing it now so that I can write documentation as I develop, because if I leave it to the end, I will likely not end up writing it.
+Eventually, this TimePreference library will be broken out of Blue Light Filter. When that happens, this readme will become the main readme for that repo. I'm writing it now so that I can write documentation as I develop, because if I leave it to the end, I will likely not end up writing it.
 
 ## Usage
 

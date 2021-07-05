@@ -1,27 +1,3 @@
-/*
- * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
- * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * This file incorporates work covered by the following copyright and
- * permission notice:
- *
- *     Copyright (c) 2015 Chris Nguyen
- *
- *     Permission to use, copy, modify, and/or distribute this software
- *     for any purpose with or without fee is hereby granted, provided
- *     that the above copyright notice and this permission notice appear
- *     in all copies.
- *
- *     THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
- *     WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
- *     WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
- *     AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
- *     CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
- *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
- *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- */
 package com.jmstudios.redmoon
 
 import android.content.Intent
@@ -29,16 +5,13 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-import com.jmstudios.redmoon.R
-
+import androidx.appcompat.widget.SwitchCompat
+import com.jmstudios.redmoon.appextensions.ExtensionContentProvider
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.settings.SettingsActivity
 import com.jmstudios.redmoon.util.*
-
 import org.greenrobot.eventbus.Subscribe
 
 class MainActivity : ThemedAppCompatActivity() {
@@ -46,35 +19,50 @@ class MainActivity : ThemedAppCompatActivity() {
     data class UI(val isOpen: Boolean) : EventBus.Event
 
     companion object : Logger() {
-        const val EXTRA_FROM_SHORTCUT_BOOL = "com.jmstudios.redmoon.activity.MainActivity.EXTRA_FROM_SHORTCUT_BOOL"
+        const val EXTRA_FROM_SHORTCUT_BOOL =
+            "com.jmstudios.redmoon.activity.MainActivity.EXTRA_FROM_SHORTCUT_BOOL"
     }
 
     override val fragment = FilterFragment()
     override val tag = "jmstudios.fragment.tag.FILTER"
 
-    private val fab: FloatingActionButton get() = findViewById(R.id.fab_toggle)
+    private val switchView: SwitchCompat get() = findViewById(R.id.switchView)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
         Log.i("Got intent")
-        if (fromShortcut) { toggleAndFinish() }
+        if (fromShortcut) {
+            toggleAndFinish()
+        }
 
         super.onCreate(savedInstanceState)
 
-        if (!Config.introShown) { startActivity(intent(Intro::class)) }
+        if (!Config.introShown) {
+            switchView.visibility = View.GONE
+            startActivity(intent(Intro::class))
+        }
         showChangelogAuto(this)
 
-        fab.setOnClickListener { _ -> Command.toggle() }
-        fab.visibility = View.VISIBLE
+        switchView.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked != filterIsOn) Command.toggle()
+        }
+
+        switchView.visibility = View.VISIBLE
+
+        // Can't toggle from browser without permissions. Need to request it before stealth launch.
+        Permission.Overlay.request(this)
+        val extras = intent.extras
+        if (extras != null) {
+            val workStatus = extras.getString(ExtensionContentProvider.KEY_WORK_STATUS)
+            if (workStatus != null) {
+                Command.toggle()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
         return true
-    }
-
-    private fun setFabIcon(on: Boolean = filterIsOn) {
-        fab.setImageResource(if (on) R.drawable.fab_pause else R.drawable.fab_start)
     }
 
     override fun onStart() {
@@ -85,7 +73,7 @@ class MainActivity : ThemedAppCompatActivity() {
     override fun onResume() {
         Log.i("onResume")
         super.onResume()
-        setFabIcon()
+        setOnCheckChanged()
         EventBus.register(this)
     }
 
@@ -103,7 +91,9 @@ class MainActivity : ThemedAppCompatActivity() {
         Log.i("onNewIntent")
         super.onNewIntent(intent)
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
-        if (fromShortcut) { toggleAndFinish() }
+        if (fromShortcut) {
+            toggleAndFinish()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -126,18 +116,24 @@ class MainActivity : ThemedAppCompatActivity() {
         return true
     }
 
+    @Subscribe
+    fun onFilterIsOnChanged(event: filterIsOnChanged) {
+        Log.i("FilterIsOnChanged")
+        setOnCheckChanged()
+    }
+
+    @Subscribe
+    fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
+        setOnCheckChanged(false)
+        Permission.Overlay.request(this)
+    }
+
+    private fun setOnCheckChanged(on: Boolean = filterIsOn) {
+        if (switchView.isChecked != on) switchView.isChecked = on
+    }
+
     private fun toggleAndFinish() {
         Command.toggle(!filterIsOn)
         finish()
-    }
-
-    @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
-        Log.i("FilterIsOnChanged")
-        setFabIcon()
-    }
-
-    @Subscribe fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
-        setFabIcon(false)
-        Permission.Overlay.request(this)
     }
 }

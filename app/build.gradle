@@ -3,49 +3,34 @@ import org.ajoberstar.grgit.Grgit
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
-if(rootProject.file("keystore.properties").exists()) {
-    // From https://developer.android.com/studio/publish/app-signing.html
-    // to load the signing config file
-    def keystorePropertiesFile = rootProject.file("keystore.properties")
-    def keystoreProperties = new Properties()
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-
-    android {
-        signingConfigs {
-            release {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile file(keystoreProperties['storeFile'])
-                storePassword keystoreProperties['storePassword']
-            }
-        }
-        buildTypes {
-            release {
-                signingConfig signingConfigs.release
-            }
-        }
-   }
-}
-
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    compileSdkVersion 30
+    buildToolsVersion '29.0.3'
+
+    signingConfigs {
+        release {
+            storeFile file('../keys/keys.jks')
+            storePassword System.getenv("FULLDIVE_KEYSTORE_PASSWORD")
+            keyAlias System.getenv("FULLDIVE_ALIAS")
+            keyPassword System.getenv("FULLDIVE_ALIAS_PASSWORD")
+        }
+    }
 
     defaultConfig {
-        applicationId "com.jmstudios.redmoon"
+        applicationId "com.fulldive.extension.eyefilter"
         minSdkVersion 14
-        targetSdkVersion 29
-        versionCode 38
-        versionName "3.5.0"
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0.0"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
 
         debug {
-            applicationIdSuffix '.debug'
             def repo = Grgit.open(currentDir: project.rootDir)
             def commitId = "${repo.log().get(0).getAbbreviatedId()}"
             if (repo.status().isClean()) {

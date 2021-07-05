@@ -26,61 +26,79 @@
 package com.jmstudios.redmoon.filter
 
 import android.animation.ValueAnimator
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.Service
+import android.app.job.JobParameters
+import android.app.job.JobService
+import android.content.Context
 import android.content.Intent
-import android.os.IBinder
-
+import android.os.Build
+import androidx.core.app.NotificationCompat
+import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.filter.overlay.Overlay
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.securesuspend.CurrentAppMonitor
 import com.jmstudios.redmoon.util.*
-
+import org.greenrobot.eventbus.Subscribe
+import java.util.*
 import java.util.concurrent.Executors
 
-import org.greenrobot.eventbus.Subscribe
-
-class FilterService : Service() {
+class FilterService : JobService() {
 
     private lateinit var mFilter: Filter
     private lateinit var mAnimator: ValueAnimator
     private lateinit var mCurrentAppMonitor: CurrentAppMonitor
-    private lateinit var mNotification: Notification
     private val executor = Executors.newSingleThreadScheduledExecutor()
 
     override fun onCreate() {
         super.onCreate()
-        Log.i("onCreate")
-        mFilter = Overlay(this)
-        mCurrentAppMonitor = CurrentAppMonitor(this, executor)
-        mNotification = Notification(this, mCurrentAppMonitor)
-        mAnimator = ValueAnimator.ofObject(ProfileEvaluator(), mFilter.profile).apply {
-            addUpdateListener { valueAnimator ->
-               mFilter.profile = valueAnimator.animatedValue as Profile
+        //hack to prevent service crash https://issuetracker.google.com/issues/76112072
+        Log.d("onCreate $this")
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                showSimpleNotification()
             }
+            mFilter = Overlay(this)
+            mCurrentAppMonitor = CurrentAppMonitor(this, executor)
+            mAnimator = ValueAnimator.ofObject(ProfileEvaluator(), mFilter.profile).apply {
+                addUpdateListener { valueAnimator ->
+                    mFilter.profile = valueAnimator.animatedValue as Profile
+                    Log.i("addUpdateListener ${mFilter.profile}")
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("error while starting foreground service", e)
         }
+        Log.i("onCreate")
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         Log.i("onStartCommand($intent, $flags, $startId)")
-        if (Permission.Overlay.isGranted) {
-            val cmd = Command.getCommand(intent)
-            val end = if (cmd.turnOn) activeProfile else mFilter.profile.off
-            mAnimator.run {
-                setObjectValues(mFilter.profile, end)
-                val fraction = if (isRunning) animatedFraction else 1f
-                duration = (cmd.time * fraction).toLong()
-                removeAllListeners()
-                addListener(CommandAnimatorListener(cmd, this@FilterService))
-                Log.i("Animating from ${mFilter.profile} to $end in $duration")
-                start()
+        try {
+            if (Permission.Overlay.isGranted) {
+                val cmd = Command.getCommand(intent)
+                val end = if (cmd.turnOn) activeProfile else mFilter.profile.off
+                mAnimator.run {
+                    Log.i("TestB Animating from ${mFilter.profile} to $end in $duration")
+                    setObjectValues(mFilter.profile, end)
+                    val fraction = if (isRunning) animatedFraction else 1f
+                    duration = (cmd.time * fraction).toLong()
+                    removeAllListeners()
+                    addListener(CommandAnimatorListener(cmd, this@FilterService))
+                    Log.i("Animating from ${mFilter.profile} to $end in $duration")
+                    start()
+                }
+            } else {
+                Log.i("Overlay permission denied.")
+                EventBus.post(overlayPermissionDenied())
+                onDestroy()
             }
-        } else {
-            Log.i("Overlay permission denied.")
-            EventBus.post(overlayPermissionDenied())
-            stopForeground(false)
+        } catch (e: Exception) {
+            Log.e("error while onStartCommand", e)
         }
-
         // Do not attempt to restart if the hosting process is killed by Android
         return Service.START_NOT_STICKY
     }
@@ -91,34 +109,77 @@ class FilterService : Service() {
             filterIsOn = true
             mCurrentAppMonitor.monitoring = Config.secureSuspend
         }
-        startForeground(NOTIFICATION_ID, mNotification.build(isOn))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            appContext.startForegroundService(Intent(appContext, FilterService::class.java))
+        } else {
+            appContext.startService(Intent(appContext, FilterService::class.java))
+        }
     }
 
     override fun onDestroy() {
         Log.i("onDestroy")
-        EventBus.unregister(this)
-        if (filterIsOn) {
-            Log.w("Service killed while filter was on!")
-            filterIsOn = false
-            mCurrentAppMonitor.monitoring = false
+        try {
+            EventBus.unregister(this)
+            if (filterIsOn) {
+                Log.w(" Service killed while filter was on!")
+                filterIsOn = false
+                mCurrentAppMonitor.monitoring = false
+            }
+            mFilter.onDestroy()
+            executor.shutdownNow()
+        } catch (e: Exception) {
+            Log.w("Service killed while filter was on!, $e")
         }
-        mFilter.onDestroy()
-        executor.shutdownNow()
         super.onDestroy()
     }
 
-    @Subscribe fun onProfileUpdated(profile: Profile) {
+    @Subscribe
+    fun onProfileUpdated(profile: Profile) {
+        Log.i("onProfileUpdated $profile")
         mFilter.profile = profile
-        startForeground(NOTIFICATION_ID, mNotification.build(true))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            appContext.startForegroundService(Intent(appContext, FilterService::class.java))
+        } else {
+            appContext.startService(Intent(appContext, FilterService::class.java))
+        }
     }
 
-    @Subscribe fun onSecureSuspendChanged(event: secureSuspendChanged) {
+    @Subscribe
+    fun onSecureSuspendChanged(event: secureSuspendChanged) {
         mCurrentAppMonitor.monitoring = Config.secureSuspend
     }
 
-    override fun onBind(intent: Intent): IBinder? = null // Prevent binding.
+    override fun onStartJob(params: JobParameters): Boolean = true
+    override fun onStopJob(params: JobParameters): Boolean = false
+
+    private fun showSimpleNotification() {
+        try {
+            startForeground(NOTIFICATION_ID, generateSimpleNotification())
+        } catch (e: Exception) {
+            Log.e("error while starting foreground service", e)
+        }
+    }
+
+    private fun generateSimpleNotification(): Notification {
+        val channel = NotificationChannel(
+            NOTIFICATION_TAG,
+            NOTIFICATION_TAG,
+            NotificationManager.IMPORTANCE_DEFAULT
+        )
+        (baseContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(
+            channel
+        )
+        val builder = NotificationCompat.Builder(baseContext, NOTIFICATION_TAG)
+            .setContentText("Full Blue Light Filter")
+            .setSmallIcon(R.mipmap.ic_launcher_round)
+
+        val notification = builder.build()
+        notification.flags = Notification.FLAG_NO_CLEAR
+        return notification
+    }
 
     companion object : Logger() {
         private const val NOTIFICATION_ID = 1
+        private const val NOTIFICATION_TAG = "eye_filter_fulldive_app"
     }
 }

@@ -41,14 +41,14 @@ class Notification(
 
         return NotificationCompat.Builder(context, getString(R.string.notification_channel_overlay_id)).apply {
             // Set notification appearance
-            setSmallIcon(R.drawable.notification_icon_half_moon)
+            setSmallIcon(R.mipmap.ic_launcher_round)
             color    = ContextCompat.getColor(appContext, R.color.color_primary)
             priority = NotificationCompat.PRIORITY_MIN
 
             if (belowAPI(24)) { setContentTitle(getString(R.string.app_name)) }
             setSubText(activeProfile.name)
 
-            // Open Red Moon when tapping notification body
+            // Open Full Blue Light Filter when tapping notification body
             val mainIntent = intent(MainActivity::class).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             }
