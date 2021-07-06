@@ -5,22 +5,19 @@
 
 package com.jmstudios.redmoon
 
-import android.app.Application
-import com.jmstudios.redmoon.util.Logger
-
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.multidex.MultiDexApplication
 import androidx.preference.PreferenceManager
-
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.Profile
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.schedule.ScheduleReceiver
-
+import com.jmstudios.redmoon.util.Logger
 import org.json.JSONObject
 
-class RedMoonApplication: Application() {
+class RedMoonApplication : MultiDexApplication() {
 
     override fun onCreate() {
         Log.i("onCreate -- Initializing appContext")
@@ -38,24 +35,30 @@ class RedMoonApplication: Application() {
     private tailrec fun upgradeFrom(version: Int): Unit = when (version) {
         BuildConfig.VERSION_CODE -> {
             Config.fromVersionCode = version
-        } -1 -> { // fresh install
+        }
+        -1 -> { // fresh install
             ProfilesModel.restoreDefaultProfiles()
             upgradeFrom(BuildConfig.VERSION_CODE)
-        } in 0..25 -> {
+        }
+        in 0..25 -> {
             upgradeToggleModePreferences()
             upgradeFrom(26)
-        } in 26..29 -> {
+        }
+        in 26..29 -> {
             upgradeProfilesFrom(version)
             upgradeFrom(30)
-        } in 30..33 -> {
+        }
+        in 30..33 -> {
             ScheduleReceiver.rescheduleOnCommand()
             ScheduleReceiver.rescheduleOffCommand()
             upgradeFrom(34)
-        } in 34..36 -> {
+        }
+        in 34..36 -> {
             upgradeFrom(37)
-        } else -> {
+        }
+        else -> {
             Log.e("Didn't catch upgrades from version $version")
-            upgradeFrom(version+1)
+            upgradeFrom(version + 1)
         }
     }
 
@@ -69,20 +72,20 @@ class RedMoonApplication: Application() {
             prefs.all.map { (key, values) ->
                 val v = values as String
 
-                val name      = key.substringBefore('_')
-                val color     = v.substringBefore(',').toInt()
+                val name = key.substringBefore('_')
+                val color = v.substringBefore(',').toInt()
                 val intensity = v.substringAfter(',').substringBefore(',').toInt()
-                val dimLevel  = v.substringAfterLast(',').toInt()
+                val dimLevel = v.substringAfterLast(',').toInt()
                 val profile = Profile(color, intensity, dimLevel, false)
 
                 Pair(profile, name)
             }
         } else prefs.all.map { (_, value) ->
             JSONObject(value as String).run {
-                val name      = optString("name")
-                val color     = optInt("color")
+                val name = optString("name")
+                val color = optInt("color")
                 val intensity = optInt("intensity")
-                val dimLevel  = optInt("dim")
+                val dimLevel = optInt("dim")
                 val lowerBrightness = optBoolean("lower-brightness")
                 val profile = Profile(color, intensity, dimLevel, lowerBrightness)
 
