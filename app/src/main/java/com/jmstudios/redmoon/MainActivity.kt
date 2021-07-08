@@ -51,13 +51,6 @@ class MainActivity : ThemedAppCompatActivity() {
 
         // Can't toggle from browser without permissions. Need to request it before stealth launch.
         Permission.Overlay.request(this)
-        val extras = intent.extras
-        if (extras != null) {
-            val workStatus = extras.getString(ExtensionContentProvider.KEY_WORK_STATUS)
-            if (workStatus != null) {
-                Command.toggle()
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
