@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * This file incorporates work covered by the following copyright and
  * permission notice:
@@ -25,9 +25,9 @@
 package com.jmstudios.redmoon
 
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.PreferenceFragment
-import android.preference.TwoStatePreference
+import androidx.preference.TwoStatePreference
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.Preference
 
 import com.jmstudios.redmoon.R
 
@@ -38,13 +38,13 @@ import com.jmstudios.redmoon.util.*
 
 import org.greenrobot.eventbus.Subscribe
 
-class FilterFragment : PreferenceFragment() {
+class FilterFragment : PreferenceFragmentCompat() {
     //private var hasShownWarningToast = false
     companion object : Logger()
 
     // Preferences
     private val profileSelectorPref: Preference
-        get() = pref(R.string.pref_key_profile_spinner)
+        get() = pref(R.string.pref_key_profile_spinner)!!
 
     private val colorPref: SeekBarPreference
         get() = pref(R.string.pref_key_color) as SeekBarPreference
@@ -58,22 +58,8 @@ class FilterFragment : PreferenceFragment() {
     private val lowerBrightnessPref: TwoStatePreference
         get() = pref(R.string.pref_key_lower_brightness) as TwoStatePreference
 
-    private val schedulePref: Preference
-        get() = pref(R.string.pref_key_schedule_header)
-
-    private val secureSuspendPref: Preference
-        get() = pref(R.string.pref_key_secure_suspend_header)
-
-    private val buttonBacklightPref: Preference
-        get() = pref(R.string.pref_key_button_backlight)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        addPreferencesFromResource(R.xml.filter_preferences)
-
-        updateSecureSuspendSummary()
-        updateScheduleSummary()
-        updateBacklightPrefSummary()
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.filter_preferences, rootKey)
 
         if (!Permission.WriteSettings.isGranted) {
             lowerBrightnessPref.isChecked = false
@@ -82,56 +68,22 @@ class FilterFragment : PreferenceFragment() {
         lowerBrightnessPref.onPreferenceChangeListener =
                 Preference.OnPreferenceChangeListener { _, newValue ->
                     val checked = newValue as Boolean
-                    if (checked) Permission.WriteSettings.request(activity) else true
+                    if (checked) Permission.WriteSettings.request(requireActivity()) else true
                 }
-
-        schedulePref.intent = intent(ScheduleActivity::class)
-        secureSuspendPref.intent = intent(SecureSuspendActivity::class)
     }
 
     override fun onStart() {
         Log.i("onStart")
         super.onStart()
+        preferenceScreen.setEnabled(Permission.Overlay.isGranted)
         EventBus.register(profileSelectorPref)
         EventBus.register(this)
-        updateSecureSuspendSummary()
-        updateScheduleSummary()
     }
 
     override fun onStop() {
         EventBus.unregister(this)
         EventBus.unregister(profileSelectorPref)
         super.onStop()
-    }
-
-    private fun updateScheduleSummary() {
-        schedulePref.summary = when {
-            !Config.scheduleOn -> getString(R.string.pref_summary_schedule_none)
-            Config.useLocation -> insertTimes(R.string.pref_summary_schedule_sun)
-            else -> insertTimes(R.string.pref_summary_schedule_custom)
-        }
-    }
-
-    private fun insertTimes(resId: Int): String {
-        return getString(resId)
-                .replace("%on", Config.scheduledStartTime)
-                .replace("%off", Config.scheduledStopTime)
-    }
-
-    private fun updateSecureSuspendSummary() {
-        secureSuspendPref.setSummary(if (Config.secureSuspend) {
-            R.string.text_switch_on
-        } else {
-            R.string.text_switch_off
-        })
-    }
-
-    private fun updateBacklightPrefSummary() {
-        buttonBacklightPref.setSummary(when(Config.buttonBacklightFlag) {
-            "system" -> R.string.pref_entry_button_backlight_system
-            "dim"    -> R.string.pref_entry_button_backlight_filter_dim_level
-            else     -> R.string.pref_entry_button_backlight_turn_off
-        })
     }
 
     //region presenter
@@ -142,11 +94,6 @@ class FilterFragment : PreferenceFragment() {
             dimLevelPref.setProgress(dimLevel)
             lowerBrightnessPref.isChecked = lowerBrightness
         }
-    }
-
-    @Subscribe
-    fun onButtonBacklightChanged(event: buttonBacklightChanged) {
-        updateBacklightPrefSummary()
     }
     //endregion
 }

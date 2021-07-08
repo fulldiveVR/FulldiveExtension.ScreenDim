@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * This file incorporates work covered by the following copyright and
  * permission notice:
@@ -38,7 +38,7 @@ class BrightnessManager(private val context: Context) {
     private var level: Int
         get() = Settings.System.getInt(resolver, Settings.System.SCREEN_BRIGHTNESS)
         set(value) {
-            if (Settings.System.canWrite(context)) {
+            if (belowAPI(23) || Settings.System.canWrite(context)) {
                 Settings.System.putInt(resolver, Settings.System.SCREEN_BRIGHTNESS, value)
             } else {
                 Log.w("Write settings permission not granted; cannot set brightness")

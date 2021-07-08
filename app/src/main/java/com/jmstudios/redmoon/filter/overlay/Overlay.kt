@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017 Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * This file incorporates work covered by the following copyright and
  * permission notice:
@@ -62,8 +62,8 @@ class Overlay(context: Context) : View(context), Filter,
         filtering = false
     }
 
-    private var filtering: Boolean by Delegates.observable(false) {
-        _, isOn, turnOn -> when {
+    private var filtering: Boolean by Delegates.observable(false) { _, isOn, turnOn ->
+        when {
             !isOn && turnOn -> show()
             isOn && !turnOn -> hide()
             isOn && turnOn -> update()
@@ -94,7 +94,14 @@ class Overlay(context: Context) : View(context), Filter,
     }
 
     private var mLayoutParams = mScreenManager.layoutParams
-        get() = field.apply { buttonBrightness = Config.buttonBacklightLevel }
+        get() = field.apply {
+            buttonBrightness = Config.buttonBacklightLevel
+            type = if (atLeastAPI(26)) {
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+            } else {
+                WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
+            }
+        }
 
     private fun updateLayoutParams() {
         mLayoutParams = mScreenManager.layoutParams

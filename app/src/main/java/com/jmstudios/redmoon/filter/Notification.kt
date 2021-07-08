@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 package com.jmstudios.redmoon.filter
 
@@ -11,8 +11,8 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.NotificationCompat
-import android.support.v4.content.ContextCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 
 import com.jmstudios.redmoon.R
 import com.jmstudios.redmoon.MainActivity
@@ -41,14 +41,14 @@ class Notification(
 
         return NotificationCompat.Builder(context, getString(R.string.notification_channel_overlay_id)).apply {
             // Set notification appearance
-            setSmallIcon(R.drawable.notification_icon_half_moon)
+            setSmallIcon(R.mipmap.ic_launcher_round)
             color    = ContextCompat.getColor(appContext, R.color.color_primary)
             priority = NotificationCompat.PRIORITY_MIN
 
             if (belowAPI(24)) { setContentTitle(getString(R.string.app_name)) }
             setSubText(activeProfile.name)
 
-            // Open Red Moon when tapping notification body
+            // Open Full Blue Light Filter when tapping notification body
             val mainIntent = intent(MainActivity::class).apply {
                 flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             }

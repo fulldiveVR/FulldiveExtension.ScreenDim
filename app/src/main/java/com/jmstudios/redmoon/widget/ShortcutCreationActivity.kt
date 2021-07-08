@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 package com.jmstudios.redmoon.widget
 
@@ -24,7 +24,7 @@ class ShortcutCreationActivity : Activity() {
         shortcutIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
 
         // See: http://www.kind-kristiansen.no/2010/android-adding-desktop-shortcut-support-to-your-app/
-        val iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.toggle_icon)
+        val iconResource = Intent.ShortcutIconResource.fromContext(this, R.mipmap.ic_launcher_round)
 
         val intent = Intent()
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent)

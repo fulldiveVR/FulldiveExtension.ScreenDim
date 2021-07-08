@@ -1,12 +1,12 @@
-<img alt="Red Moon Icon" align="right" height="256" src="https://lut.im/3IqLwsAZWH/piFLRMOgNLWmiqB8.png">
+<img alt="Blue Light Filter Icon" align="right" height="256" src="https://lut.im/3IqLwsAZWH/piFLRMOgNLWmiqB8.png">
 
-# Red Moon [![Translation status](https://hosted.weblate.org/widgets/red-moon/-/svg-badge.svg)](https://hosted.weblate.org/engage/red-moon/?utm_source=widget) [![License](https://img.shields.io/badge/license-GPL--3.0%2B-bd0000.svg)](COPYING "License: GPL-3.0+") [![Commits (since latest release)](https://img.shields.io/github/commits-since/LibreShift/red-moon/latest.svg "Commits since latest release")](https://github.com/LibreShift/red-moon/releases/latest)
+# Blue Light Filter<br/>[![Translation status](https://hosted.weblate.org/widgets/red-moon/-/svg-badge.svg)](https://hosted.weblate.org/engage/red-moon/?utm_source=widget) [![License](https://img.shields.io/badge/license-GPL--3.0%2B-bd0000.svg)](COPYING "License: GPL-3.0-or-later") [![Commits (since latest release)](https://img.shields.io/github/commits-since/LibreShift/red-moon/latest.svg "Commits since latest release")](https://github.com/LibreShift/red-moon/releases/latest)
 
-Blue light may suppress the production of melatonin, the sleep hormone. Red Moon
+Blue light may suppress the production of melatonin, the sleep hormone. Blue Light Filter
 filters out blue light and dims your screen below the normal minimum, so you can
 use your phone comfortably at night.
 
-* Schedule Red Moon to run from sunset to sunrise, or at custom times.
+* Schedule Blue Light Filter to run from sunset to sunrise, or at custom times.
 * Use the default color profiles, or set custom color, intensity, and dim levels.
 * Automatically pause in apps secured against overlays, or those you choose.
 * Quickly start, stop, and switch profiles via notification, tile (Android 7.0+), or widget.
@@ -30,21 +30,21 @@ other parts of their life. That's where you come in! You can:
 - Read through the [issues] and give a <g-emoji alias="+1" class="emoji" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" ios-version="6.0">👍</g-emoji> to the ones you care about most.
 - Open [new issues] with feedback, feature requests, or bug reports.
 - Help translate using [Weblate]. 
-- Join the chat at [![Matrix](art/badge_matrix.svg)](https://matrix.to/#/#redmoon:matrix.org),
+- Come chat at [![Matrix](art/badge_matrix.svg)](https://matrix.to/#/#redmoon:matrix.org),
     [![IRC](art/badge_irc.svg)](https://kiwiirc.com/client/irc.freenode.net/#redmoon),
     or [![Gitter](https://img.shields.io/gitter/room/LibreShift/red-moon.svg)](https://gitter.im/LibreShift/red-moon)
 
+<a href="https://hosted.weblate.org/engage/red-moon/?utm_source=widget">
+<img src="https://hosted.weblate.org/widgets/red-moon/-/horizontal-auto.svg" alt="Translation status" />
+</a>
+
 ## Looking for co-maintainers
 
-Red Moon is still maintained, and I have no plans to change that. I would actually like to do more development and get Red Moon feature-complete. However, it is hard for me to get motivated to do that when I'm the only developer (especially when there are [other](https://snowdrift.coop) projects I'm involved in that *do* have others working on them).
+Blue Light Filter is still maintained, and I have no plans to change that. I would actually like to do more development and get Blue Light Filter feature-complete. However, it is hard for me to get motivated to do that when I'm the only developer (especially when there are [other](https://snowdrift.coop) projects I'm involved in that *do* have others working on them).
 
 If you're interested in becoming a co-maintainer, I'm willing to spend time walking you through the code base.
 
-## Screenshots & translation stats
-
-<a href="https://hosted.weblate.org/engage/red-moon/en/?utm_source=widget">
-<img src="https://hosted.weblate.org/widgets/red-moon/en/strings/multi-auto.svg" alt="Translation status" align="right" height="732" />
-</a>
+## Screenshots
 
 Screenshots are slightly out of date.
 
@@ -58,11 +58,15 @@ Screenshots are slightly out of date.
 
 To build the app on GNU+Linux, clone the repository, then, from the root directory, run
 
-`./gradlew build`
+```
+./gradlew build
+```
 
 To install the app on a connected device or running emulator, run
 
-`./gradlew installFdroidDebug` or `./gradlew installPlaystoreDebug`
+```
+./gradlew installDebug
+```
 
 ### Pull requests
 
@@ -91,17 +95,9 @@ here's a short list of what I've been doing.
       align="right"
       alt="GNU GPLv3 Image">](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
-*Red Moon* is a derivative of *[Shades](https://github.com/cngu/shades)* by
-[Chris Nguyen](https://github.com/cngu), used under the
-[MIT License](https://github.com/cngu/shades/blob/e240edc1df3e6dd319cd475a739570ff8367d7f8/LICENSE).
-*Red Moon* is licensed under the
-[GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html),
-or (at your option) any later version by
-[the contributors](https://github.com/raatmarien/red-moon/graphs/contributors).
+*Blue Light Filter* is licensed under the [GNU General Public License version 3] or (at your option) any later version by [the contributors]. It is a derivative of *[Shades]* by [Chris Nguyen], used under the [MIT License].
 
-All used artwork is released into the public domain. Some of the icons
-use cliparts from [openclipart.org](https://openclipart.org/), which
-are all released in the public domain, namely:
+All used artwork is released into the public domain. Some of the icons use cliparts from [openclipart.org], which are all released in the public domain, namely:
 
 * https://openclipart.org/detail/121903/full-moon
 * https://openclipart.org/detail/219211/option-button-symbol-minimal-svg-markup
@@ -117,3 +113,9 @@ are all released in the public domain, namely:
 [new issues]: https://github.com/raatmarien/red-moon/issues/new
 [Weblate]: https://hosted.weblate.org/projects/red-moon/strings/
 [labels]: https://github.com/LibreShift/red-moon/labels
+[Shades]: https://github.com/cngu/shades
+[Chris Nguyen]: https://github.com/cngu
+[MIT License]: https://github.com/cngu/shades/blob/e240edc1df3e6dd319cd475a739570ff8367d7f8/LICENSE
+[GNU General Public License version 3]: https://www.gnu.org/licenses/gpl-3.0.html
+[the contributors]: https://github.com/raatmarien/red-moon/graphs/contributors
+[openclipart.org]: https://openclipart.org/

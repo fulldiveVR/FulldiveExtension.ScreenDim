@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 package com.jmstudios.redmoon.schedule
 
@@ -11,7 +11,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.support.v4.app.AlarmManagerCompat
+import androidx.core.app.AlarmManagerCompat
 
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config

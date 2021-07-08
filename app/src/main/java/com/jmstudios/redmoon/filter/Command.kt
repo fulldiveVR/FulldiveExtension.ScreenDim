@@ -1,13 +1,14 @@
 /*
  * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
  * Copyright (c) 2017 Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 package com.jmstudios.redmoon.filter
 
 import android.content.ComponentName
 import android.content.Intent
+import android.os.Build
 
 import com.jmstudios.redmoon.util.*
 
@@ -25,10 +26,11 @@ enum class Command(val time: Float) {
     OFF(DURATION_LONG) {
         override val turnOn: Boolean = false
         override fun onAnimationStart(service: FilterService) {
-            service.stopForeground(true)
+            service.onDestroy()
         }
+
         override fun onAnimationEnd(service: FilterService) {
-            service.stopSelf()
+            service.onDestroy()
         }
     },
     PAUSE(DURATION_SHORT) {
@@ -58,8 +60,7 @@ enum class Command(val time: Float) {
 
         override fun onAnimationEnd(service: FilterService) {
             if (filterWasOn != true) {
-                service.stopForeground(true)
-                service.stopSelf()
+                service.onDestroy()
                 filterWasOn = null
             }
         }
@@ -68,7 +69,18 @@ enum class Command(val time: Float) {
     val intent: Intent
         get() = intent(FilterService::class).putExtra(EXTRA_COMMAND, name)
 
-    fun send(): ComponentName = appContext.startService(intent)
+    fun send(): ComponentName? {
+        // Starting from SDK 26, startService doesn't allow to start a
+        // foreground service from background. Most of the time, FilterService
+        // is started from foreground anyways but there are exceptions: for
+        // instance when launched from a quick setting tile.
+        // See https://developer.android.com/about/versions/oreo/background
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            appContext.startForegroundService(intent)
+        } else {
+            appContext.startService(intent)
+        }
+    }
 
     abstract val turnOn: Boolean
 
@@ -85,12 +97,12 @@ enum class Command(val time: Float) {
         private var filterWasOn: Boolean? = null
 
         fun getCommand(intent: Intent): Command {
-            val commandName = intent.getStringExtra(EXTRA_COMMAND)
+            val commandName = intent.getStringExtra(EXTRA_COMMAND) ?: ""
             Log.i("Recieved flag: $commandName")
             return valueOf(commandName)
         }
 
-        fun toggle(on: Boolean) {
+        fun toggle(on: Boolean = !filterIsOn) {
             if (on) ON.send() else OFF.send()
         }
 

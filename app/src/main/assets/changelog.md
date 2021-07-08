@@ -1,8 +1,33 @@
 # Changelog
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog], and this project follows [Semantic Versioning].
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [4.0.0] — ????-??-??
+### Added
+- Start and stop times can be set to sunset and sunrise individually
+
+### Changed
+- All non-filter preferences moved to their own screen
+- Replaced top switch with floating action button
+- Prevent changing filter preferences until overlay permission is granted
+
+### Fixed
+- Time preferences display summary in proper locale
+
+### Removed
+- Removed "Sunrise to Sunset" preference, since you can set them individually
+
+## [3.5.0] — 2020-03-01
+### Added
+- Filter toggles when the schedule is updated
+
+### Changed
+- Update translations
+
+### Fixed
+- Fix alignment in on/off switch at the top of schedule/exclude screens
+
+### Removed
+- Remove prompt to rate the app from the Google Play version
 
 ## [3.4.0] — 2019-02-02
 ### Added
@@ -61,7 +86,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.3.0] — 2017-09-28
 ### Added
-- You can now customize which apps are excluded from filtering. Exclude an app from the Red Moon notification while that app is running.
+- You can now customize which apps are excluded from filtering. Exclude an app from the Full Blue Light Filter notification while that app is running.
 
 ### Fixed
 - Fixed a bug where backlight brightness was not restored
@@ -89,9 +114,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Rewrote the "Pause in secure apps" feature to fix crashes and bugs and reduce battery use. Note: this release has added logging which may increase battery use; it will be removed in the next release if no bugs are found.
 - Fix a bug where the filter would not start as scheduled on Android 6.0+
-- When turning off, don't change the backlight brightness if was changed since Red Moon lowered it.
+- When turning off, don't change the backlight brightness if was changed since Full Blue Light Filter lowered it.
 - Fix crash when upgrading between 3.1.x versions.
-- Fix a bug where profiles would not be saved until Red Moon was closed and re-opened.
+- Fix a bug where profiles would not be saved until Full Blue Light Filter was closed and re-opened.
 
 ## [3.1.2] — 2017-09-07
 ### Fixed
@@ -103,7 +128,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.1.0] — 2017-09-02
 ### Added
-- Long press on the quick settings tile to open Red Moon
+- Long press on the quick settings tile to open Full Blue Light Filter
 
 ### Changed
 - Turn the timer on by default
@@ -121,7 +146,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed a bug where the top switch did not toggle the filter
 - Fixed a bug where the fade transition would not play if the filter was toggled mid-transition.
-- Fixed bugs when Red Moon is killed throug Android
+- Fixed bugs when Full Blue Light Filter is killed throug Android
 
 ## [3.0.0] — 2017-04-23
 ### Added
@@ -153,7 +178,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the intro so it doesn't overflow on small screens
 - Fall back to GPS if network location is turned off (network location is still used by default, for battery savings)
 - More accurate location update messages
-- Fixed a bug where changes to 'Pause in secure apps' did not apply until Red Moon was killed
+- Fixed a bug where changes to 'Pause in secure apps' did not apply until Full Blue Light Filter was killed
 
 ### Removed
 - Remove location preference
@@ -161,7 +186,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.10.1] — 2017-03-12
 ### Added
 - Allow choosing how hardware buttons are dimmed
-- Notification shows when Red Moon is paused in a secure app
+- Notification shows when Full Blue Light Filter is paused in a secure app
 
 ### Changed
 - Update notification icon
@@ -177,24 +202,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added timer subscreen
 - Added about page
 - Use GPS on devices that can't get a network location
-- [For developers and power users] Notify other apps when Red Moon toggles (details on the about page).
+- [For developers and power users] Notify other apps when Full Blue Light Filter toggles (details on the about page).
 - Added Italian translation — @matteocoder
 
 ### Changed
-- Refer to "Red Moon" instead of "The filter"
-- Top switch toggles Red Moon on and off (instead of enabling/disabling all functionality)
+- Refer to "Full Blue Light Filter" instead of "The filter"
+- Top switch toggles Full Blue Light Filter on and off (instead of enabling/disabling all functionality)
 - Update notification and widget phrasing/icons
 - Updated translations
 
 ### Fixed
 - Don't stop searching for location when the app is closed
-- Fixed a bug where Red Moon didn't pause in new versions of the package installer
+- Fixed a bug where Full Blue Light Filter didn't pause in new versions of the package installer
 - Many small bugfixes
 
 ### Removed
 - Remove the floating button (since the top switch does this now)
 
 
+[Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
+[Semantic Versioning]: https://semver.org/spec/v2.0.0.html
+[4.0.0]: https://github.com/LibreShift/red-moon/compare/v3.5.0...v4.0.0
+[3.4.0]: https://github.com/LibreShift/red-moon/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/LibreShift/red-moon/compare/v3.3.2...v3.4.0
 [3.3.2]: https://github.com/LibreShift/red-moon/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/LibreShift/red-moon/compare/v3.3.0...v3.3.1

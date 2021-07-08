@@ -1,43 +1,17 @@
-/*
- * Copyright (c) 2016  Marien Raat <marienraat@riseup.net>
- * Copyright (c) 2017  Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL-3.0+
- *
- * This file incorporates work covered by the following copyright and
- * permission notice:
- *
- *     Copyright (c) 2015 Chris Nguyen
- *
- *     Permission to use, copy, modify, and/or distribute this software
- *     for any purpose with or without fee is hereby granted, provided
- *     that the above copyright notice and this permission notice appear
- *     in all copies.
- *
- *     THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
- *     WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
- *     WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
- *     AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
- *     CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
- *     OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- *     NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
- *     CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- */
 package com.jmstudios.redmoon
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.support.v7.widget.SwitchCompat
-
-import com.jmstudios.redmoon.R
+import android.view.View
+import androidx.appcompat.widget.SwitchCompat
+import com.jmstudios.redmoon.appextensions.ExtensionContentProvider
 import com.jmstudios.redmoon.filter.Command
-
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
-import com.jmstudios.redmoon.ui.showRateDialog
+import com.jmstudios.redmoon.settings.SettingsActivity
 import com.jmstudios.redmoon.util.*
-
 import org.greenrobot.eventbus.Subscribe
 
 class MainActivity : ThemedAppCompatActivity() {
@@ -45,44 +19,43 @@ class MainActivity : ThemedAppCompatActivity() {
     data class UI(val isOpen: Boolean) : EventBus.Event
 
     companion object : Logger() {
-        const val EXTRA_FROM_SHORTCUT_BOOL = "com.jmstudios.redmoon.activity.MainActivity.EXTRA_FROM_SHORTCUT_BOOL"
+        const val EXTRA_FROM_SHORTCUT_BOOL =
+            "com.jmstudios.redmoon.activity.MainActivity.EXTRA_FROM_SHORTCUT_BOOL"
     }
 
     override val fragment = FilterFragment()
     override val tag = "jmstudios.fragment.tag.FILTER"
 
-    private var mSwitch : SwitchCompat? = null
+    private val switchView: SwitchCompat get() = findViewById(R.id.switchView)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
         Log.i("Got intent")
-        if (fromShortcut) { toggleAndFinish() }
+        if (fromShortcut) {
+            toggleAndFinish()
+        }
 
         super.onCreate(savedInstanceState)
-        if (!Config.introShown) { startActivity(intent(Intro::class)) }
-        if (Config.lastChangelogShown < BuildConfig.VERSION_CODE) {
-            showChangelog(this)
+
+        if (!Config.introShown) {
+            switchView.visibility = View.GONE
+            startActivity(intent(Intro::class))
         }
-        showRateDialog(this) // Implemented in product flavors
+        showChangelogAuto(this)
+
+        switchView.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked != filterIsOn) Command.toggle()
+        }
+
+        switchView.visibility = View.VISIBLE
+
+        // Can't toggle from browser without permissions. Need to request it before stealth launch.
+        Permission.Overlay.request(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
-
-        menu.findItem(R.id.menu_dark_theme).isChecked = Config.darkThemeFlag
-        mSwitch = (menu.findItem(R.id.screen_filter_switch).actionView as SwitchCompat).apply {
-            safeSetChecked(filterIsOn) // Side effect: sets listener
-        }
-
         return true
-    }
-
-    fun SwitchCompat.safeSetChecked(checked: Boolean) {
-        setOnCheckedChangeListener { _, _ ->  }
-        isChecked = checked
-        setOnCheckedChangeListener { _, checked ->
-            Command.toggle(checked)
-        }
     }
 
     override fun onStart() {
@@ -93,7 +66,7 @@ class MainActivity : ThemedAppCompatActivity() {
     override fun onResume() {
         Log.i("onResume")
         super.onResume()
-        mSwitch?.safeSetChecked(filterIsOn)
+        setOnCheckChanged()
         EventBus.register(this)
     }
 
@@ -109,8 +82,11 @@ class MainActivity : ThemedAppCompatActivity() {
 
     override fun onNewIntent(intent: Intent) {
         Log.i("onNewIntent")
+        super.onNewIntent(intent)
         val fromShortcut = intent.getBooleanExtra(EXTRA_FROM_SHORTCUT_BOOL, false)
-        if (fromShortcut) { toggleAndFinish() }
+        if (fromShortcut) {
+            toggleAndFinish()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -122,9 +98,8 @@ class MainActivity : ThemedAppCompatActivity() {
             R.id.menu_about -> {
                 startActivity(intent(AboutActivity::class))
             }
-            R.id.menu_dark_theme -> {
-                Config.darkThemeFlag = !Config.darkThemeFlag
-                recreate()
+            R.id.menu_settings -> {
+                startActivity(intent(SettingsActivity::class))
             }
             R.id.menu_restore_default_filters -> {
                 ProfilesModel.restoreDefaultProfiles()
@@ -134,18 +109,24 @@ class MainActivity : ThemedAppCompatActivity() {
         return true
     }
 
+    @Subscribe
+    fun onFilterIsOnChanged(event: filterIsOnChanged) {
+        Log.i("FilterIsOnChanged")
+        setOnCheckChanged()
+    }
+
+    @Subscribe
+    fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
+        setOnCheckChanged(false)
+        Permission.Overlay.request(this)
+    }
+
+    private fun setOnCheckChanged(on: Boolean = filterIsOn) {
+        if (switchView.isChecked != on) switchView.isChecked = on
+    }
+
     private fun toggleAndFinish() {
         Command.toggle(!filterIsOn)
         finish()
-    }
-
-    @Subscribe fun onFilterIsOnChanged(event: filterIsOnChanged) {
-        Log.i("FilterIsOnChanged")
-        mSwitch?.safeSetChecked(filterIsOn)
-    }
-
-    @Subscribe fun onOverlayPermissionDenied(event: overlayPermissionDenied) {
-        mSwitch?.safeSetChecked(false)
-        Permission.Overlay.request(this)
     }
 }

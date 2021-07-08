@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- * Copyright (c) 2016 Marien Raat <marienraat@riseup.net>
- * Copyright (c) 2017 Stephen Michel <s@smichel.me>
- * SPDX-License-Identifier: GPL3.0+
--->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
-    <item
-        android:id="@+id/screen_filter_switch"
-        android:title=""
-        app:showAsAction="always"
-        app:actionLayout="@layout/switch_layout" />
-
-    <item
-        android:id="@+id/menu_dark_theme"
-        android:title="@string/menu_dark_theme"
-        android:checkable="true"
-        app:showAsAction="never" />
-
     <item
         android:id="@+id/menu_restore_default_filters"
         android:title="@string/menu_restore_default_filters"
@@ -28,6 +11,11 @@
         android:title="@string/menu_show_intro"
         app:showAsAction="never"
         android:icon="@drawable/ic_help_white_24dp"/>
+
+    <item
+        android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/menu_about"
