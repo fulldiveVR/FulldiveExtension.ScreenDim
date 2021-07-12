@@ -18,13 +18,4 @@
         android:key="@string/pref_key_version"
         android:layout="@layout/preference_summary"
         android:title="@string/pref_title_version" />
-
-    <Preference
-        android:layout="@layout/preference_summary"
-        android:summary="@string/pref_summary_integration"
-        android:title="@string/pref_title_integration">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:data="@string/project_page_url" />
-    </Preference>
 </PreferenceScreen>
