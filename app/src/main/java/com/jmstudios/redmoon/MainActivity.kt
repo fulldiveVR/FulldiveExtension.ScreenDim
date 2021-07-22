@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SwitchCompat
-import com.jmstudios.redmoon.appextensions.ExtensionContentProvider
+import com.jmstudios.redmoon.appextensions.WorkType
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel

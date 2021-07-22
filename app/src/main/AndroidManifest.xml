@@ -70,6 +70,15 @@
         </activity>
 
         <activity
+            android:name=".appextensions.StealthActivity"
+            android:theme="@style/stealthTheme"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
             android:name=".widget.ShortcutCreationActivity"
             android:label="@string/activity_shortcut"
             android:theme="@style/TransparentTheme">
@@ -122,6 +131,7 @@
             android:name=".appextensions.ExtensionContentProvider"
             android:authorities="com.fulldive.extension.eyefilter.FulldiveContentProvider"
             android:exported="true"
-            android:permission="com.fulldive.extension.eyefilter.access.read"/>
+            android:permission="com.fulldive.extension.eyefilter.access.read">
+        </provider>
     </application>
 </manifest>
