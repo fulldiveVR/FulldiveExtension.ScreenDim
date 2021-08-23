@@ -6,13 +6,21 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SwitchCompat
-import com.jmstudios.redmoon.appextensions.WorkType
+import com.jmstudios.redmoon.appextensions.PopupManager
 import com.jmstudios.redmoon.filter.Command
 import com.jmstudios.redmoon.model.Config
 import com.jmstudios.redmoon.model.ProfilesModel
 import com.jmstudios.redmoon.settings.SettingsActivity
 import com.jmstudios.redmoon.util.*
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import org.greenrobot.eventbus.Subscribe
+import java.io.IOException
+
 
 class MainActivity : ThemedAppCompatActivity() {
 
@@ -51,6 +59,9 @@ class MainActivity : ThemedAppCompatActivity() {
 
         // Can't toggle from browser without permissions. Need to request it before stealth launch.
         Permission.Overlay.request(this)
+
+        PopupManager.onAppStarted(this)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
