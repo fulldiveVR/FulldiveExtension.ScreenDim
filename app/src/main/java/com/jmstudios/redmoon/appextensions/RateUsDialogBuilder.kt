@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.appcompat.widget.AppCompatRatingBar
+import androidx.core.content.ContextCompat
 import com.jmstudios.redmoon.R
 import kotlin.math.roundToInt
 
@@ -20,7 +21,7 @@ object RateUsDialogBuilder {
         }
 
         val builder = AlertDialog.Builder(context)
-        builder
+        val dialog = builder
             .setView(view)
             .setTitle(R.string.rate_us_title)
             .setPositiveButton(R.string.rate_submit) { _, _ ->
@@ -28,10 +29,13 @@ object RateUsDialogBuilder {
             }
             .setNegativeButton(R.string.rate_cancel) { _, _ -> }
             .create()
-            .apply {
-                getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(context.getColor(R.color.textColorPrimary))
-                getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(context.getColor(R.color.textColorSecondary))
-            }
-            .show()
+        dialog.setOnShowListener {
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                ?.setTextColor(ContextCompat.getColor(context, R.color.textColorAccent))
+            dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                ?.setTextColor(ContextCompat.getColor(context, R.color.textColorSecondary))
+        }
+
+        dialog.show()
     }
 }
