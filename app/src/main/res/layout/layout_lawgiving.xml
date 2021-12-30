@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <EditText
+        android:hint="@string/maelstrom_annoyance_benjamin_lush"
+        android:id="@+id/cocoaView"
+        android:inputType="textMultiLine"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/anticonvulsant_whitehall_injurious"
+        android:textColor="@color/millenia_placebo_incisor"
+        app:layout_constraintBottom_toTopOf="@id/locoweedNostradamusView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:hint="@string/prior_degas_southey"
+        android:id="@+id/locoweedNostradamusView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/horsehair_mustnt_obsidian"
+        android:textColor="#B35E4A04"
+        app:layout_constraintBottom_toTopOf="@id/aldrinBiracialView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cocoaView" />
+
+    <Button
+        android:background="#2219F8"
+        android:hint="@string/steadfast_jettison_groundskeep"
+        android:id="@+id/aldrinBiracialView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/millipede_ammoniac_newman"
+        android:textColor="@color/canopy_extoller_entrant"
+        android:textSize="@dimen/protrude_poincare_textsize"
+        app:layout_constraintBottom_toTopOf="@id/englishView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locoweedNostradamusView" />
+
+    <CheckBox
+        android:background="@color/foxhole_whale_expedite"
+        android:hint="@string/centaur_roadway_jeff_bijective"
+        android:id="@+id/englishView"
+        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dubhe_baryon_size"
+        android:text="@string/excursion_salaam_aleph"
+        android:textColor="#7B8C158F"
+        app:layout_constraintBottom_toTopOf="@id/dachshundSnipeView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aldrinBiracialView" />
+
+    <AutoCompleteTextView
+        android:hint="@string/basin_buckeye_numerous"
+        android:id="@+id/dachshundSnipeView"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:padding="@dimen/herbicide_polka_width"
+        android:text="@string/appetite_imposition_born"
+        app:layout_constraintBottom_toTopOf="@id/henbaneView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/englishView" />
+
+    <CheckedTextView
+        android:background="@color/fractionate_frizzle_retrogressive"
+        android:hint="@string/thine_agog_troop"
+        android:id="@+id/henbaneView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/colic_govern_biscuit_revive"
+        android:textColor="@color/waters_kingfisher_tattler"
+        app:layout_constraintBottom_toTopOf="@id/denebolaPersistentLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dachshundSnipeView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/denebolaPersistentLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/tehranCarlyleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/henbaneView">
+
+        <Button
+            android:hint="@string/civet_codebreak_lipid_goof"
+            android:id="@+id/loomMagellanicView"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text="@string/able_consonantal_base"
+            android:textSize="@dimen/cornerstone_chateau_textsize"
+            app:layout_constraintBottom_toTopOf="@id/esplanadeSandmanView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:hint="@string/wrasse_surveyor_pinball"
+            android:id="@+id/esplanadeSandmanView"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/healey_pfennig_dull_bold"
+            android:textColor="#D719B6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loomMagellanicView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:hint="@string/applicable_workforce_manuel_pomp"
+        android:id="@+id/tehranCarlyleView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/nora_pituitary_sadie"
+        android:textSize="@dimen/crock_muskox_textsize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/denebolaPersistentLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

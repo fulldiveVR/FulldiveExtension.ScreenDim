@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2021 FullDive
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 /**
  * Copyright (c) 2020  Stephen Michel <s@smichel.me>
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -147,6 +163,7 @@ open class TimePreferenceDialogFragmentCompat : DialogFragment(), TimePickerDial
 
     companion object {
         private const val TAG = "TimePrefDialogFragment"
+
         // For persisting state
         private const val ARG_KEY = "key"
         private const val SAVE_STATE_NEUTRAL_TEXT = "TimePreferenceDialogFragment.neutralText"

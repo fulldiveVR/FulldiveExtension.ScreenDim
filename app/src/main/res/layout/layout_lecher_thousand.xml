@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ancientLayout"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/syndrome_diplomacy_margin"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/skippingCarolineView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckedTextView
+            android:hint="@string/afresh_lakeside_swill_soviet"
+            android:id="@+id/piccadillyView"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/capitol_jill_padding"
+            android:layout_width="0dp"
+            android:text="@string/able_consonantal_base"
+            app:layout_constraintBottom_toTopOf="@id/aprilRedundantView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckedTextView
+            android:background="@color/mantle_zeroth_arsenal"
+            android:hint="@string/wyeth_supervene_pablo"
+            android:id="@+id/aprilRedundantView"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/kinky_portmanteau_sonora_ymca"
+            android:textColor="@color/transpire_potomac_cataclysmic"
+            app:layout_constraintBottom_toTopOf="@id/bowmenRhododendronLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/piccadillyView" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/bowmenRhododendronLayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/acrylateView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aprilRedundantView">
+
+            <AutoCompleteTextView
+                android:background="@color/corbett_asteroid_pobox"
+                android:hint="@string/ashy_sustain_vientiane_sheila"
+                android:id="@+id/indemnityView"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingEnd="@dimen/valery_walk_padding"
+                android:paddingStart="@dimen/quick_confucian_padding"
+                android:paddingTop="@dimen/quick_confucian_padding"
+                android:text="@string/surpass_nepotistic_successive_micrography"
+                android:textColor="#9CEFA203" />
+
+            <AutoCompleteTextView
+                android:background="#D9748CAF"
+                android:hint="@string/exportation_avery_economy_laughter"
+                android:id="@+id/ncaaGentlewomenView"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sedate_julie_height"
+                android:layout_width="wrap_content"
+                android:paddingTop="48dp"
+                android:text="@string/parallax_periwinkle_framework_scotland"
+                android:textColor="@color/gandhi_porosity_alibi"
+                android:textSize="@dimen/commodity_ascend_textsize" />
+
+            <EditText
+                android:hint="@string/tuba_feature_prevention_tacitus"
+                android:id="@+id/binghamView"
+                android:inputType="textCapWords"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/rotenone_corroboree_height"
+                android:layout_width="wrap_content"
+                android:text="@string/herald_wilful_mollie"
+                android:textColor="@color/waters_kingfisher_tattler" />
+
+            <CheckBox
+                android:background="@color/fractionate_frizzle_retrogressive"
+                android:hint="@string/unimodular_oncoming_riggs"
+                android:id="@+id/thermodynamicView"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/teflon_mulish_bruckner_convoy"
+                android:textColor="@color/wyatt_alphameric_moss" />
+
+            <CheckedTextView
+                android:background="@color/primal_slum_conductive"
+                android:hint="@string/northwest_homecoming_borough_mcmullen"
+                android:id="@+id/tehranCarlyleView"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/personal_vide_thatch"
+                android:textColor="@color/patrician_raceway" />
+
+            <Button
+                android:background="@color/geode_agglutinate_registrant"
+                android:hint="@string/acerbic_skim_marvel_milky"
+                android:id="@+id/rubyView"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/ntis_circulate_quest_adam"
+                android:textColor="@color/dominican_transylvania" />
+        </LinearLayout>
+
+        <AutoCompleteTextView
+            android:hint="@string/knott_inertia_officiate_jill"
+            android:id="@+id/acrylateView"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:text="@string/ripoff_fleming_dayton_acorn"
+            android:textColor="@color/ninth_elution_wildflower"
+            android:textSize="@dimen/pelt_demodulate_textsize"
+            app:layout_constraintBottom_toTopOf="@id/oftentimesColonistView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bowmenRhododendronLayout" />
+
+        <Button
+            android:background="@color/triangulate_bayport_gaunt"
+            android:hint="@string/scanning_poseidon_getty_slump"
+            android:id="@+id/oftentimesColonistView"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:paddingBottom="26dp"
+            android:paddingEnd="@dimen/erudition_crossway_margin"
+            android:paddingStart="@dimen/roosevelt_flagler_size"
+            android:paddingTop="@dimen/aside_sophomoric"
+            android:text="@string/gracious_endometrial_dodecahedral"
+            android:textColor="@color/gideon_ieee_mulatto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/acrylateView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:background="#D278344E"
+        android:hint="@string/forbidden_preposition_wildfire_optimism"
+        android:id="@+id/skippingCarolineView"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/poynting_counterpoise_periwinkle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ancientLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
