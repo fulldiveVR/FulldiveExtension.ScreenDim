@@ -27,11 +27,11 @@ import android.content.Context
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.PixelFormat
+import android.os.Build
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.WindowManager
-
 import com.jmstudios.redmoon.util.Logger
 
 private const val DEFAULT_NAV_BAR_HEIGHT_DP = 48
@@ -44,22 +44,30 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
     private var mNavigationBarHeight = -1
 
     val layoutParams: WindowManager.LayoutParams
-        get() = WindowManager.LayoutParams(
+        get() =
+            WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT,
                 screenHeight,
                 0,
                 -statusBarHeightPx,
-                WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+                } else {
+                    WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY
+                },
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-                        or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                        or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
-                        or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-                        or WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
-                        or WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
+                    or WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
+                    or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+                    or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                    or WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
+                    or WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED,
                 PixelFormat.TRANSLUCENT
-        ).apply {
-            gravity = Gravity.TOP or Gravity.START
-        }
+            ).apply {
+                gravity = Gravity.TOP or Gravity.START
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    alpha = 0.8F
+                }
+            }
 
     val screenHeight: Int
         get() {
@@ -76,7 +84,8 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
     val statusBarHeightPx: Int
         get() {
             if (mStatusBarHeight == -1) {
-                val statusBarHeightId = mResources.getIdentifier("status_bar_height", "dimen", "android")
+                val statusBarHeightId =
+                    mResources.getIdentifier("status_bar_height", "dimen", "android")
 
                 if (statusBarHeightId > 0) {
                     mStatusBarHeight = mResources.getDimensionPixelSize(statusBarHeightId)
@@ -93,7 +102,8 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
     val navigationBarHeightPx: Int
         get() {
             if (mNavigationBarHeight == -1) {
-                val navBarHeightId = mResources.getIdentifier("navigation_bar_height", "dimen", "android")
+                val navBarHeightId =
+                    mResources.getIdentifier("navigation_bar_height", "dimen", "android")
 
                 if (navBarHeightId > 0) {
                     mNavigationBarHeight = mResources.getDimensionPixelSize(navBarHeightId)
@@ -108,10 +118,12 @@ class ScreenManager(context: Context, private val mWindowManager: WindowManager)
         }
 
     private fun dpToPx(dp: Int): Int {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                                         dp.toFloat(), mResources.displayMetrics).toInt()
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            dp.toFloat(), mResources.displayMetrics
+        ).toInt()
     }
-    
+
     private val inPortrait: Boolean
         get() = mResources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT
 
